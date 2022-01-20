@@ -1,16 +1,20 @@
 {
-  "name": "oclif-hello-world",
-  "description": "oclif example Hello World CLI",
-  "version": "0.0.0",
-  "author": "Salesforce",
+  "name": "emmacli",
+  "description": "Command line interface to manage emma entities",
+  "version": "0.0.1",
+  "author": "Emma",
   "bin": {
-    "oex": "bin/run"
+    "emmacli": "bin/run"
   },
-  "bugs": "https://github.com/oclif/hello-world/issues",
+  "bugs": "https://github.com/MandarinSolutions/emma-cli/issues",
   "dependencies": {
     "@oclif/core": "^1",
     "@oclif/plugin-help": "^5",
-    "@oclif/plugin-plugins": "^2.0.1"
+    "@oclif/plugin-plugins": "^2.0.1",
+    "axios": "^0.24.0",
+    "ssl-root-cas": "^1.3.1",
+    "qs": "^6.10.3",
+    "js-yaml": "^4.1.0"
   },
   "devDependencies": {
     "@oclif/test": "^2",
@@ -38,28 +42,21 @@
     "/npm-shrinkwrap.json",
     "/oclif.manifest.json"
   ],
-  "homepage": "https://github.com/oclif/hello-world",
+  "homepage": "https://github.com/MandarinSolutions/emma-cli",
   "keywords": [
-    "oclif"
+    "cli",
+    "emma",
+    "emmacli"
   ],
   "license": "MIT",
   "main": "dist/index.js",
   "oclif": {
-    "bin": "oex",
-    "dirname": "oex",
+    "bin": "emmacli",
+    "dirname": "emmacli",
     "commands": "./dist/commands",
-    "plugins": [
-      "@oclif/plugin-help",
-      "@oclif/plugin-plugins"
-    ],
-    "topicSeparator": " ",
-    "topics": {
-      "hello": {
-        "description": "Say hello to the world and others"
-      }
-    }
+    "topicSeparator": " "
   },
-  "repository": "oclif/hello-world",
+  "repository": "MandarinSolutions/emma-cli",
   "scripts": {
     "build": "shx rm -rf dist && tsc -b",
     "lint": "eslint emmacli --ext .ts --config .eslintrc",
