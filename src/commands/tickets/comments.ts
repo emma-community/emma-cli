@@ -24,6 +24,6 @@ export default class Comments extends BaseCommand {
     const publicApiService = this.getPublicApiService();
 
     const response = await publicApiService.get(`tickets/${args.uid}/comments`, params);
-    this.printObject(flags, response.data);
+    this.printArray(flags, response.data, undefined);
   }
 }
