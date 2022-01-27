@@ -30,7 +30,7 @@ export default class Roles extends BaseCommand {
       this.printObject(flags, response.data);
     } else {
       const response = await publicApiService.get('roles', params);
-      this.printArray(flags, response.data.content, undefined);
+      this.printArray(flags, response.data, undefined);
     }
   }
 }

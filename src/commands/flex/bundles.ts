@@ -34,7 +34,7 @@ export default class Bundles extends BaseCommand {
       this.printObject(flags, response.data);
     } else {
       const response = await publicApiService.get('flex/bundles', params);
-      this.printArray(flags, response.data.content, undefined);
+      this.printArray(flags, response.data, undefined);
     }
   }
 }

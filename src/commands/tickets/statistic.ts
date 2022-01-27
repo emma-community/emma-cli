@@ -23,6 +23,6 @@ export default class Statistic extends BaseCommand {
     const publicApiService = this.getPublicApiService();
 
     const response = await publicApiService.get('tickets/statistic', params);
-    this.printArray(flags, response.data.content, undefined);
+    this.printArray(flags, response.data, undefined);
   }
 }

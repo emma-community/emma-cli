@@ -23,6 +23,6 @@ export default class LimitsState extends BaseCommand {
     const publicApiService = this.getPublicApiService();
 
     const response = await publicApiService.get('rate/limits/state', params);
-    this.printArray(flags, response.data.content, undefined);
+    this.printArray(flags, response.data, undefined);
   }
 }

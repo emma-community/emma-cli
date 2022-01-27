@@ -24,6 +24,6 @@ export default class Search extends BaseCommand {
     const publicApiService = this.getPublicApiService();
 
     const response = await publicApiService.get('tickets/search/{term}', params);
-    this.printArray(flags, response.data.content, undefined);
+    this.printArray(flags, response.data, undefined);
   }
 }

@@ -30,7 +30,7 @@ export default class PermissionSets extends BaseCommand {
       this.printObject(flags, response.data);
     } else {
       const response = await publicApiService.get('permissionSets', params);
-      this.printArray(flags, response.data.content, undefined);
+      this.printArray(flags, response.data, undefined);
     }
   }
 }

@@ -23,6 +23,6 @@ export default class Projects extends BaseCommand {
     const publicApiService = this.getPublicApiService();
 
     const response = await publicApiService.get('projects', params);
-    this.printArray(flags, response.data.content, undefined);
+    this.printArray(flags, response.data, undefined);
   }
 }

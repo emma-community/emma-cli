@@ -23,6 +23,6 @@ export default class WizardTuples extends BaseCommand {
     const publicApiService = this.getPublicApiService();
 
     const response = await publicApiService.get('flex/wizard-tuples', params);
-    this.printArray(flags, response.data.content, undefined);
+    this.printArray(flags, response.data, undefined);
   }
 }

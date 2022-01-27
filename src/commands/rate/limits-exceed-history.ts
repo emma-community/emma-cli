@@ -26,6 +26,6 @@ export default class LimitsExceedHistory extends BaseCommand {
     const publicApiService = this.getPublicApiService();
 
     const response = await publicApiService.get('rate/limits/exceed/history', params);
-    this.printArray(flags, response.data.content, undefined);
+    this.printArray(flags, response.data, undefined);
   }
 }

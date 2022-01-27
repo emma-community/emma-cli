@@ -23,6 +23,6 @@ export default class Groups extends BaseCommand {
     const publicApiService = this.getPublicApiService();
 
     const response = await publicApiService.get('groups', params);
-    this.printArray(flags, response.data.content, undefined);
+    this.printArray(flags, response.data, undefined);
   }
 }

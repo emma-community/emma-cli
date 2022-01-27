@@ -23,6 +23,6 @@ export default class Current extends BaseCommand {
     const publicApiService = this.getPublicApiService();
 
     const response = await publicApiService.get('pricing/current', params);
-    this.printArray(flags, response.data.content, undefined);
+    this.printArray(flags, response.data, undefined);
   }
 }

@@ -23,6 +23,6 @@ export default class Vms extends BaseCommand {
     const publicApiService = this.getPublicApiService();
 
     const response = await publicApiService.get('products/vms', params);
-    this.printArray(flags, response.data.content, undefined);
+    this.printArray(flags, response.data, undefined);
   }
 }
