@@ -23,6 +23,6 @@ export default class Company extends BaseCommand {
     const publicApiService = this.getPublicApiService();
 
     const response = await publicApiService.get('company', params);
-    this.printArray(flags, response.data.content, undefined);
+    this.printObject(flags, response.data);
   }
 }
