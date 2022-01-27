@@ -2,13 +2,13 @@ import {Flags} from '@oclif/core'
 import constants from "../../utils/Constants";
 import BaseCommand from "../../commons/BaseCommand";
 
-export default class Locations extends BaseCommand {
+export default class Bundles extends BaseCommand {
 
-  static description = `Get list of locations`
+  static description = `Get list of bundles`
 
   static examples = [
-    `$ ${constants.cliName} flex locations`,
-    `$ ${constants.cliName} flex locations {id}`
+    `$ ${constants.cliName} flex bundles`,
+    `$ ${constants.cliName} flex bundles {id}`
   ]
 
   static flags = {
@@ -25,15 +25,15 @@ export default class Locations extends BaseCommand {
   ]
 
   async run(): Promise<any> {
-    const {args, flags} = await this.parse(Locations);
+    const {args, flags} = await this.parse(Bundles);
     const params = this.getParamsMap(flags);
     const publicApiService = this.getPublicApiService();
 
     if (args.id) {
-      const response = await publicApiService.get(`flex/locations/${args.id}`, params);
+      const response = await publicApiService.get(`flex/bundles/${args.id}`, params);
       this.printObject(flags, response.data);
     } else {
-      const response = await publicApiService.get('flex/locations', params);
+      const response = await publicApiService.get('flex/bundles', params);
       this.printArray(flags, response.data.content, undefined);
     }
   }
