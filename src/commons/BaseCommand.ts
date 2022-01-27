@@ -27,8 +27,20 @@ export default abstract class BaseCommand extends Command {
     } else if (flags.yaml) {
       console.log(yaml.dump(content));
     } else {
-      const headerOptions = tableColumns != null ? tableColumns : this.getTableHeaders(content);
-      cli.table(content, headerOptions, {printLine: console.log});
+      // search for suitable data
+      let data = [];
+
+      if (Array.isArray(content)) {
+        data = content;
+      } else if (Array.isArray(content.content)) {
+        data = content.content;
+      } else if (Array.isArray(content.items)) {
+        data = content.items;
+      } else {
+        throw new Error("Can not render response as a table. Try to use --json/--yaml flags")
+      }
+      const headerOptions = tableColumns != null ? tableColumns : this.getTableHeaders(data);
+      cli.table(data, headerOptions, {printLine: console.log});
     }
   }
 
