@@ -36,6 +36,10 @@ export default abstract class BaseCommand extends Command {
         data = content.content;
       } else if (Array.isArray(content.items)) {
         data = content.items;
+      } else if (Array.isArray(content.projectApps)) {
+        data = content.projectApps;
+      } else if (Array.isArray(content.projectKubernetes)) {
+        data = content.projectKubernetes;
       } else {
         throw new Error("Can not render response as a table. Try to use --json/--yaml flags")
       }
