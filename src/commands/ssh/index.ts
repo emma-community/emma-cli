@@ -4,7 +4,7 @@ import BaseCommand from "../../commons/BaseCommand";
 
 export default class Ssh extends BaseCommand {
 
-  static description = `Get ssh keys by company`
+  static description = `Get ssh keys in company`
 
   static examples = [
     `$ ${constants.cliName} ssh`]

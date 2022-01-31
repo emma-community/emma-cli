@@ -4,7 +4,7 @@ import BaseCommand from "../../commons/BaseCommand";
 
 export default class Company extends BaseCommand {
 
-  static description = `Get external application company`
+  static description = `Get company information`
 
   static examples = [
     `$ ${constants.cliName} company`]

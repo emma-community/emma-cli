@@ -12,7 +12,7 @@ export default class Search extends BaseCommand {
   static flags = {
     json: Flags.boolean({description: 'Print a json output', required: false}),
     yaml: Flags.boolean({description: 'Print a yaml output', required: false}),
-    term: Flags.string({description: '//TODO add description', required: true})
+    term: Flags.string({description: 'Search term', required: true})
   }
 
   static args = [

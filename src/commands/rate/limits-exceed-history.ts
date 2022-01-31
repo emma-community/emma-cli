@@ -12,9 +12,9 @@ export default class LimitsExceedHistory extends BaseCommand {
   static flags = {
     json: Flags.boolean({description: 'Print a json output', required: false}),
     yaml: Flags.boolean({description: 'Print a yaml output', required: false}),
-    startPeriodUnixTimestamp: Flags.integer({description: '//TODO add description', required: true}),
-    endPeriodUnixTimestamp: Flags.integer({description: '//TODO add description', required: true}),
-    companyLimits: Flags.boolean({description: '//TODO add description', required: false})
+    startPeriodUnixTimestamp: Flags.integer({description: 'Start period for limits search (in unix timestamp)', required: true}),
+    endPeriodUnixTimestamp: Flags.integer({description: 'End period for limits search (in unix timestamp)', required: true}),
+    companyLimits: Flags.boolean({description: 'Include company exceed history', required: false})
   }
 
   static args = [

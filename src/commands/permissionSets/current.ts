@@ -4,7 +4,7 @@ import BaseCommand from "../../commons/BaseCommand";
 
 export default class Current extends BaseCommand {
 
-  static description = `Get permission set by id`
+  static description = `Get permission set for current client`
 
   static examples = [
     `$ ${constants.cliName} permissionSets current`]

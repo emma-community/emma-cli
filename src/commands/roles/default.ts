@@ -4,7 +4,7 @@ import BaseCommand from "../../commons/BaseCommand";
 
 export default class Default extends BaseCommand {
 
-  static description = `Get a list of default-roles`
+  static description = `Get a list of default roles`
 
   static examples = [
     `$ ${constants.cliName} roles default`,

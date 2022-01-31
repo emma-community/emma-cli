@@ -4,7 +4,7 @@ import BaseCommand from "../../commons/BaseCommand";
 
 export default class Pricing extends BaseCommand {
 
-  static description = `Get a list of pricings by avatar`
+  static description = `Get a list of pricing`
 
   static examples = [
     `$ ${constants.cliName} pricing`]

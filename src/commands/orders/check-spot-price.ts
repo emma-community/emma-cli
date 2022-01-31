@@ -4,7 +4,7 @@ import BaseCommand from "../../commons/BaseCommand";
 
 export default class CheckSpotPrice extends BaseCommand {
 
-  static description = `Get list of current company orders`
+  static description = `Check spot price`
 
   static examples = [
     `$ ${constants.cliName} orders check-spot-price`]
@@ -12,10 +12,10 @@ export default class CheckSpotPrice extends BaseCommand {
   static flags = {
     json: Flags.boolean({description: 'Print a json output', required: false}),
     yaml: Flags.boolean({description: 'Print a yaml output', required: false}),
-    providerId: Flags.integer({description: '//TODO add description', required: true}),
-    bundleId: Flags.integer({description: '//TODO add description', required: true}),
-    dcId: Flags.integer({description: '//TODO add description', required: true}),
-    templateId: Flags.integer({description: '//TODO add description', required: true})
+    providerId: Flags.integer({description: 'Provider id', required: true}),
+    bundleId: Flags.integer({description: 'Bundle id', required: true}),
+    dcId: Flags.integer({description: 'DC id', required: true}),
+    templateId: Flags.integer({description: 'Template id', required: true})
   }
 
   static args = [

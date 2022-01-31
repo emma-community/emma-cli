@@ -4,7 +4,7 @@ import BaseCommand from "../../commons/BaseCommand";
 
 export default class WizardTuplesSpot extends BaseCommand {
 
-  static description = `Get list of wizard tuples`
+  static description = `Get list of spot wizard tuples`
 
   static examples = [
     `$ ${constants.cliName} flex wizard-tuples-spot`]
@@ -12,7 +12,7 @@ export default class WizardTuplesSpot extends BaseCommand {
   static flags = {
     json: Flags.boolean({description: 'Print a json output', required: false}),
     yaml: Flags.boolean({description: 'Print a yaml output', required: false}),
-    itemCount: Flags.integer({description: '//TODO add description', required: false})
+    itemCount: Flags.integer({description: 'Return items count default 10000', required: false})
   }
 
   static args = [

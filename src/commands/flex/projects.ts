@@ -4,7 +4,7 @@ import BaseCommand from "../../commons/BaseCommand";
 
 export default class Projects extends BaseCommand {
 
-  static description = `Get list of full projects`
+  static description = `Get list of projects`
 
   static examples = [
     `$ ${constants.cliName} flex projects`,
@@ -14,10 +14,10 @@ export default class Projects extends BaseCommand {
   static flags = {
     json: Flags.boolean({description: 'Print a json output', required: false}),
     yaml: Flags.boolean({description: 'Print a yaml output', required: false}),
-    pageNumber: Flags.integer({description: '//TODO add description', required: false}),
-    itemCount: Flags.integer({description: '//TODO add description', required: false}),
-    sortBy: Flags.string({description: '//TODO add description', required: false}),
-    order: Flags.string({description: '//TODO add description', required: false})
+    pageNumber: Flags.integer({description: 'Page number default 0', required: false}),
+    itemCount: Flags.integer({description: 'Item count default 5', required: false}),
+    sortBy: Flags.string({description: 'Sort by field default id', required: false}),
+    order: Flags.string({description: 'Order direction default ASC', required: false}),
   }
 
   static args = [
