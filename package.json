@@ -56,7 +56,7 @@
     "commands": "./dist/commands",
     "topicSeparator": " "
   },
-  "repository": "MandarinSolutions/emma-cli",
+  "repository": "https://github.com/MandarinSolutions/emma-cli",
   "scripts": {
     "build": "shx rm -rf dist && tsc -b",
     "lint": "eslint src/** --ext .ts --config .eslintrc",
