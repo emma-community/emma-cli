@@ -1,8 +1,7 @@
-import constants from "../../utils/Constants";
-import BaseCommand from "../../commons/BaseCommand";
+import constants from '../../utils/constants'
+import BaseCommand from '../../commons/base-command'
 
 export default class Logout extends BaseCommand {
-
   static description = 'Log out from emma platform'
 
   static examples = [
@@ -14,10 +13,8 @@ export default class Logout extends BaseCommand {
   static args = []
 
   async run(): Promise<any> {
-    const {args, flags} = await this.parse(Logout);
+    await this.getContext().stateService.removeState()
 
-    await this.getContext().stateService.removeState();
-
-    await this.printObject({}, `Successfully logout`);
+    await this.printObject({}, 'Successfully logout')
   }
 }

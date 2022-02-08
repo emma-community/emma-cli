@@ -2,5 +2,10 @@
   "extends": [
     "oclif",
     "oclif-typescript"
-  ]
+  ],
+  "rules": {
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "no-eq-null": "off",
+    "eqeqeq": "off"
+  }
 }

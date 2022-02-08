@@ -2,11 +2,11 @@ import {Flags} from '@oclif/core'
 import constants from '../../utils/constants'
 import BaseCommand from '../../commons/base-command'
 
-export default class LimitsState extends BaseCommand {
-  static description = 'Get company rate limit state'
+export default class Vms extends BaseCommand {
+  static description = 'Get vm details'
 
   static examples = [
-    `$ ${constants.cliName} rate limits-state`,
+    `$ ${constants.cliName} flex vms {id}`,
   ]
 
   static flags = {
@@ -15,14 +15,15 @@ export default class LimitsState extends BaseCommand {
   }
 
   static args = [
+    {name: 'id', description: 'Id of requested vm', required: true},
   ]
 
   async run(): Promise<any> {
-    const {flags} = await this.parse(LimitsState)
+    const {args, flags} = await this.parse(Vms)
     const params = this.getParamsMap(flags)
     const publicApiService = this.getPublicApiService()
 
-    const response = await publicApiService.get('rate/limits/state', params)
+    const response = await publicApiService.get(`flex/vms/${args.id}`, params)
     this.printObject(flags, response.data)
   }
 }
