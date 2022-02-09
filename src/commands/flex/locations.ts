@@ -1,14 +1,13 @@
 import {Flags} from '@oclif/core'
-import constants from "../../utils/Constants";
-import BaseCommand from "../../commons/BaseCommand";
+import constants from '../../utils/constants'
+import BaseCommand from '../../commons/base-command'
 
 export default class Locations extends BaseCommand {
-
-  static description = `Get list of locations`
+  static description = 'Get list of locations'
 
   static examples = [
     `$ ${constants.cliName} flex locations`,
-    `$ ${constants.cliName} flex locations {id}`
+    `$ ${constants.cliName} flex locations {id}`,
   ]
 
   static flags = {
@@ -21,20 +20,20 @@ export default class Locations extends BaseCommand {
   }
 
   static args = [
-    {name: 'id', description: 'Id of requested flex', required: false}
+    {name: 'id', description: 'Id of requested flex', required: false},
   ]
 
   async run(): Promise<any> {
-    const {args, flags} = await this.parse(Locations);
-    const params = this.getParamsMap(flags);
-    const publicApiService = this.getPublicApiService();
+    const {args, flags} = await this.parse(Locations)
+    const params = this.getParamsMap(flags)
+    const publicApiService = this.getPublicApiService()
 
     if (args.id) {
-      const response = await publicApiService.get(`flex/locations/${args.id}`, params);
-      this.printObject(flags, response.data);
+      const response = await publicApiService.get(`flex/locations/${args.id}`, params)
+      this.printObject(flags, response.data)
     } else {
-      const response = await publicApiService.get('flex/locations', params);
-      this.printArray(flags, response.data, undefined);
+      const response = await publicApiService.get('flex/locations', params)
+      this.printArray(flags, response.data)
     }
   }
 }
