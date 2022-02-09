@@ -91,7 +91,7 @@ EXAMPLES
   $ emmacli company
 ```
 
-_See code: [dist/commands/company/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.1/dist/commands/company/index.ts)_
+_See code: [src/commands/company/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.1/src/commands/company/index.ts)_
 
 ## `emmacli estore descriptions`
 
@@ -399,7 +399,7 @@ EXAMPLES
   $ emmacli groups
 ```
 
-_See code: [dist/commands/groups/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.1/dist/commands/groups/index.ts)_
+_See code: [src/commands/groups/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.1/src/commands/groups/index.ts)_
 
 ## `emmacli login`
 
@@ -422,7 +422,7 @@ EXAMPLES
   $ emmacli login
 ```
 
-_See code: [dist/commands/login/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.1/dist/commands/login/index.ts)_
+_See code: [src/commands/login/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.1/src/commands/login/index.ts)_
 
 ## `emmacli logout`
 
@@ -439,7 +439,7 @@ EXAMPLES
   $ emmacli logout
 ```
 
-_See code: [dist/commands/logout/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.1/dist/commands/logout/index.ts)_
+_See code: [src/commands/logout/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.1/src/commands/logout/index.ts)_
 
 ## `emmacli orders [ID]`
 
@@ -465,7 +465,7 @@ EXAMPLES
   $ emmacli orders {id}
 ```
 
-_See code: [dist/commands/orders/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.1/dist/commands/orders/index.ts)_
+_See code: [src/commands/orders/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.1/src/commands/orders/index.ts)_
 
 ## `emmacli orders check-spot-price`
 
@@ -665,7 +665,7 @@ EXAMPLES
   $ emmacli permissionSets
 ```
 
-_See code: [dist/commands/permissionSets/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.1/dist/commands/permissionSets/index.ts)_
+_See code: [src/commands/permissionSets/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.1/src/commands/permissionSets/index.ts)_
 
 ## `emmacli permissionSets current`
 
@@ -729,7 +729,7 @@ EXAMPLES
   $ emmacli pricing
 ```
 
-_See code: [dist/commands/pricing/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.1/dist/commands/pricing/index.ts)_
+_See code: [src/commands/pricing/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.1/src/commands/pricing/index.ts)_
 
 ## `emmacli pricing current`
 
@@ -769,7 +769,7 @@ EXAMPLES
   $ emmacli products
 ```
 
-_See code: [dist/commands/products/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.1/dist/commands/products/index.ts)_
+_See code: [src/commands/products/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.1/src/commands/products/index.ts)_
 
 ## `emmacli products applications [ID]`
 
@@ -876,7 +876,7 @@ EXAMPLES
   $ emmacli projects
 ```
 
-_See code: [dist/commands/projects/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.1/dist/commands/projects/index.ts)_
+_See code: [src/commands/projects/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.1/src/commands/projects/index.ts)_
 
 ## `emmacli projects current`
 
@@ -963,7 +963,7 @@ EXAMPLES
   $ emmacli roles
 ```
 
-_See code: [dist/commands/roles/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.1/dist/commands/roles/index.ts)_
+_See code: [src/commands/roles/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.1/src/commands/roles/index.ts)_
 
 ## `emmacli roles default [ID]`
 
@@ -1008,7 +1008,7 @@ EXAMPLES
   $ emmacli ssh
 ```
 
-_See code: [dist/commands/ssh/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.1/dist/commands/ssh/index.ts)_
+_See code: [src/commands/ssh/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.1/src/commands/ssh/index.ts)_
 
 ## `emmacli tickets [UID]`
 
@@ -1034,7 +1034,7 @@ EXAMPLES
   $ emmacli tickets {uid}
 ```
 
-_See code: [dist/commands/tickets/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.1/dist/commands/tickets/index.ts)_
+_See code: [src/commands/tickets/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.1/src/commands/tickets/index.ts)_
 
 ## `emmacli tickets comments UID`
 
@@ -1119,5 +1119,5 @@ EXAMPLES
   $ emmacli users {id}
 ```
 
-_See code: [dist/commands/users/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.1/dist/commands/users/index.ts)_
+_See code: [src/commands/users/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.1/src/commands/users/index.ts)_
 <!-- commandsstop -->

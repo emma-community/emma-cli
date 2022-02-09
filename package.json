@@ -51,12 +51,16 @@
   "license": "MIT",
   "main": "dist/index.js",
   "oclif": {
+    "commands": "./dist/commands",
     "bin": "emmacli",
     "dirname": "emmacli",
-    "commands": "./dist/commands",
-    "topicSeparator": " "
+    "topicSeparator": " ",
+    "macos": {
+      "identifier": "com.emma.cli",
+      "sign": "Developer ID Installer: Emma"
+    }
   },
-  "repository": "https://github.com/MandarinSolutions/emma-cli",
+  "repository": "MandarinSolutions/emma-cli",
   "scripts": {
     "build": "shx rm -rf dist && tsc -b",
     "lint": "eslint src/** --ext .ts --config .eslintrc",
