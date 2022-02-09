@@ -1,5 +1,4 @@
 import {Command} from '@oclif/core'
-// eslint-disable-next-line node/no-extraneous-import
 import {cli} from 'cli-ux'
 import ContextService from '../services/context-service'
 import PublicApiService from '../services/public-api-service'
