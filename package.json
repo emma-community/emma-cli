@@ -56,8 +56,7 @@
     "commands": "./dist/commands",
     "topicSeparator": " ",
     "macos": {
-      "identifier": "com.emma.cli",
-      "sign": "Developer ID Installer: Emma"
+      "identifier": "com.emma.cli"
     }
   },
   "repository": "MandarinSolutions/emma-cli",
