@@ -70,7 +70,8 @@
     "test": "mocha --forbid-only \\\"test/**/*.test.ts\\\"",
     "version": "oclif readme && git add README.md",
     "packWin": "oclif pack win",
-    "packMacos": "oclif pack macos"
+    "packMacos": "oclif pack macos",
+    "packDeb": "oclif pack deb"
   },
   "types": "dist/index.d.ts"
 }
