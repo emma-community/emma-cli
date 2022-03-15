@@ -59,6 +59,25 @@
     "topicSeparator": " ",
     "macos": {
       "identifier": "com.emma.cli"
+    },
+    "topics": {
+      "auth": { "description": "Authorize in emma platform" },
+      "company": { "description": "Company common information" },
+      "company:limits": { "description": "Company limits state information" },
+      "company:orders": { "description": "Company orders information" },
+      "company:permission-sets": { "description": "Company permission sets information" },
+      "company:pricings": { "description": "Company pricing information" },
+      "company:projects": { "description": "Company projects information" },
+      "company:roles": { "description": "Company roles information" },
+      "company:tickets": { "description": "Company tickets information" },
+      "product": { "description": "Manage company products" },
+      "product:applications": { "description": "Manage company applications" },
+      "product:clusters": { "description": "Manage company k8s clusters" },
+      "product:common": { "description": "Products common operations" },
+      "product:networks": { "description": "Manage company networks security groups" },
+      "product:networks:security-groups": { "description": "Manage company networks security groups" },
+      "product:spots": { "description": "Manage company spots" },
+      "product:vms": { "description": "Manage company vms" }
     }
   },
   "repository": "MandarinSolutions/emma-cli",
