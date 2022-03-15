@@ -1,13 +1,8 @@
 import {Flags} from '@oclif/core'
-import constants from '../../../utils/constants'
 import BaseCommand from '../../../commons/base-command'
 
 export default class CloneVmOrder extends BaseCommand {
   static description = 'Clone vm'
-
-  static examples = [
-    `$ ${constants.cliName} orders vm clone`,
-  ]
 
   static flags = {
     json: Flags.boolean({description: 'Print a json output', required: false}),

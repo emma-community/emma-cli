@@ -1,8 +1,8 @@
 import {Flags} from '@oclif/core'
 import BaseCommand from '../../../commons/base-command'
 
-export default class Index extends BaseCommand {
-  static description = 'Get list of current company spot vms'
+export default class Descriptions extends BaseCommand {
+  static description = 'Get list of current company products descriptions'
 
   static flags = {
     json: Flags.boolean({description: 'Print a json output', required: false}),
@@ -13,11 +13,11 @@ export default class Index extends BaseCommand {
   ]
 
   async run(): Promise<any> {
-    const {flags} = await this.parse(Index)
+    const {flags} = await this.parse(Descriptions)
     const params = this.getParamsMap(flags)
     const publicApiService = this.getPublicApiService()
 
-    const response = await publicApiService.get('products/spots', params)
+    const response = await publicApiService.get('products/descriptions', params)
     this.printArray(flags, response.data)
   }
 }

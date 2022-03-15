@@ -1,13 +1,8 @@
 import {Flags} from '@oclif/core'
-import constants from '../../../utils/constants'
 import BaseCommand from '../../../commons/base-command'
 
 export default class LimitsExceedHistory extends BaseCommand {
   static description = 'Get current company project payable requests count'
-
-  static examples = [
-    `$ ${constants.cliName} rate limits-exceed-history`,
-  ]
 
   static flags = {
     json: Flags.boolean({description: 'Print a json output', required: false}),

@@ -1,14 +1,8 @@
 import {Flags} from '@oclif/core'
-import constants from '../../../utils/constants'
 import BaseCommand from '../../../commons/base-command'
 
 export default class Default extends BaseCommand {
   static description = 'Get a list of default roles'
-
-  static examples = [
-    `$ ${constants.cliName} roles default`,
-    `$ ${constants.cliName} roles default {id}`,
-  ]
 
   static flags = {
     json: Flags.boolean({description: 'Print a json output', required: false}),

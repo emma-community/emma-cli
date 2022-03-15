@@ -1,13 +1,8 @@
 import {Flags} from '@oclif/core'
-import constants from '../../../utils/constants'
 import BaseCommand from '../../../commons/base-command'
 
 export default class DeleteEstore extends BaseCommand {
   static description = 'Delete application'
-
-  static examples = [
-    `$ ${constants.cliName} estore delete`,
-  ]
 
   static flags = {
     json: Flags.boolean({description: 'Print a json output', required: false}),

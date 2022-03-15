@@ -1,14 +1,8 @@
 import {Flags} from '@oclif/core'
-import constants from '../../../utils/constants'
 import BaseCommand from '../../../commons/base-command'
 
 export default class Orders extends BaseCommand {
   static description = 'Get list of current company orders'
-
-  static examples = [
-    `$ ${constants.cliName} orders`,
-    `$ ${constants.cliName} orders {id}`,
-  ]
 
   static flags = {
     json: Flags.boolean({description: 'Print a json output', required: false}),

@@ -1,13 +1,8 @@
 import {Flags} from '@oclif/core'
-import constants from '../../../utils/constants'
 import BaseCommand from '../../../commons/base-command'
 
 export default class TransferVmOrder extends BaseCommand {
   static description = 'Transfer vm'
-
-  static examples = [
-    `$ ${constants.cliName} orders vm transfer`,
-  ]
 
   static flags = {
     json: Flags.boolean({description: 'Print a json output', required: false}),
@@ -25,7 +20,7 @@ export default class TransferVmOrder extends BaseCommand {
     const {flags} = await this.parse(TransferVmOrder)
     const params = this.getParamsMap(flags)
     const publicApiService = this.getPublicApiService()
-    const deleteSource = !params.doNotDeleteSource;
+    const deleteSource = !params.doNotDeleteSource
 
     const request = {
       productType: 'VM',
@@ -35,7 +30,7 @@ export default class TransferVmOrder extends BaseCommand {
         dcId: params.dcId,
         providerId: params.providerId,
         cloudType: params.cloudType,
-        deleteSource
+        deleteSource,
       },
       params: {},
     }

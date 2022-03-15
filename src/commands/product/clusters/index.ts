@@ -1,14 +1,8 @@
 import {Flags} from '@oclif/core'
-import constants from '../../../utils/constants'
 import BaseCommand from '../../../commons/base-command'
 
 export default class Index extends BaseCommand {
   static description = 'Get list of current company k8s clusters'
-
-  static examples = [
-    `$ ${constants.cliName} products k8s`,
-    `$ ${constants.cliName} products k8s {id}`,
-  ]
 
   static flags = {
     json: Flags.boolean({description: 'Print a json output', required: false}),

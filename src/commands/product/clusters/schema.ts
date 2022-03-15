@@ -1,13 +1,8 @@
 import {Flags} from '@oclif/core'
-import constants from '../../../utils/constants'
 import BaseCommand from '../../../commons/base-command'
 
 export default class K8sSchema extends BaseCommand {
   static description = 'Get cluster configuration schema'
-
-  static examples = [
-    `$ ${constants.cliName} k8s schema`,
-  ]
 
   static flags = {
     json: Flags.boolean({description: 'Print a json output', required: false}),

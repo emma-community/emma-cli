@@ -1,13 +1,8 @@
 import {Flags} from '@oclif/core'
-import constants from '../../../utils/constants'
 import BaseCommand from '../../../commons/base-command'
 
-export default class Descriptions extends BaseCommand {
-  static description = 'Get list of current company products descriptions'
-
-  static examples = [
-    `$ ${constants.cliName} products descriptions`,
-  ]
+export default class Ssh extends BaseCommand {
+  static description = 'Get ssh keys in company'
 
   static flags = {
     json: Flags.boolean({description: 'Print a json output', required: false}),
@@ -18,11 +13,11 @@ export default class Descriptions extends BaseCommand {
   ]
 
   async run(): Promise<any> {
-    const {flags} = await this.parse(Descriptions)
+    const {flags} = await this.parse(Ssh)
     const params = this.getParamsMap(flags)
     const publicApiService = this.getPublicApiService()
 
-    const response = await publicApiService.get('products/descriptions', params)
+    const response = await publicApiService.get('ssh', params)
     this.printArray(flags, response.data)
   }
 }

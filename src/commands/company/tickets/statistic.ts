@@ -1,13 +1,8 @@
 import {Flags} from '@oclif/core'
-import constants from '../../../utils/constants'
 import BaseCommand from '../../../commons/base-command'
 
 export default class Statistic extends BaseCommand {
   static description = 'Get tickets statistic'
-
-  static examples = [
-    `$ ${constants.cliName} tickets statistic`,
-  ]
 
   static flags = {
     json: Flags.boolean({description: 'Print a json output', required: false}),

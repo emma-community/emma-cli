@@ -1,14 +1,8 @@
 import {Flags} from '@oclif/core'
-import constants from '../../../utils/constants'
 import BaseCommand from '../../../commons/base-command'
 
-export default class Projects extends BaseCommand {
-  static description = 'Get list of projects'
-
-  static examples = [
-    `$ ${constants.cliName} flex projects`,
-    `$ ${constants.cliName} flex projects {id}`,
-  ]
+export default class Locations extends BaseCommand {
+  static description = 'Get list of locations'
 
   static flags = {
     json: Flags.boolean({description: 'Print a json output', required: false}),
@@ -24,15 +18,15 @@ export default class Projects extends BaseCommand {
   ]
 
   async run(): Promise<any> {
-    const {args, flags} = await this.parse(Projects)
+    const {args, flags} = await this.parse(Locations)
     const params = this.getParamsMap(flags)
     const publicApiService = this.getPublicApiService()
 
     if (args.id) {
-      const response = await publicApiService.get(`flex/projects/${args.id}`, params)
+      const response = await publicApiService.get(`flex/locations/${args.id}`, params)
       this.printObject(flags, response.data)
     } else {
-      const response = await publicApiService.get('flex/projects', params)
+      const response = await publicApiService.get('flex/locations', params)
       this.printArray(flags, response.data)
     }
   }

@@ -1,13 +1,8 @@
 import {Flags} from '@oclif/core'
-import constants from '../../../utils/constants'
 import BaseCommand from '../../../commons/base-command'
 
 export default class SnapshotVmOrder extends BaseCommand {
   static description = 'Create vm snapshot'
-
-  static examples = [
-    `$ ${constants.cliName} orders vm snapshot`,
-  ]
 
   static flags = {
     json: Flags.boolean({description: 'Print a json output', required: false}),

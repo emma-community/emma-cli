@@ -1,13 +1,8 @@
 import {Flags} from '@oclif/core'
-import constants from '../../../utils/constants'
 import BaseCommand from '../../../commons/base-command'
 
 export default class ShutdownSpotOrder extends BaseCommand {
   static description = 'Shutdown spot'
-
-  static examples = [
-    `$ ${constants.cliName} orders spot shutdown`,
-  ]
 
   static flags = {
     json: Flags.boolean({description: 'Print a json output', required: false}),

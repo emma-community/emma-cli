@@ -1,13 +1,8 @@
 import {Flags} from '@oclif/core'
-import constants from '../../../utils/constants'
 import BaseCommand from '../../../commons/base-command'
 
 export default class Login extends BaseCommand {
   static description = 'Login in emma platform'
-
-  static examples = [
-    `$ ${constants.cliName} login`,
-  ]
 
   static flags = {
     clientId: Flags.string({description: 'Service App client id', required: true}),

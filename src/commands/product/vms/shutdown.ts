@@ -1,13 +1,8 @@
 import {Flags} from '@oclif/core'
-import constants from '../../../utils/constants'
 import BaseCommand from '../../../commons/base-command'
 
 export default class ShutdownVmOrder extends BaseCommand {
   static description = 'Shutdown vm'
-
-  static examples = [
-    `$ ${constants.cliName} orders vm shutdown`,
-  ]
 
   static flags = {
     json: Flags.boolean({description: 'Print a json output', required: false}),

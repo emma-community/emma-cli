@@ -1,13 +1,8 @@
 import {Flags} from '@oclif/core'
-import constants from '../../../utils/constants'
 import BaseCommand from '../../../commons/base-command'
 
 export default class WizardTuplesSpot extends BaseCommand {
   static description = 'Get list of spot wizard tuples'
-
-  static examples = [
-    `$ ${constants.cliName} flex wizard-tuples-spot`,
-  ]
 
   static flags = {
     json: Flags.boolean({description: 'Print a json output', required: false}),

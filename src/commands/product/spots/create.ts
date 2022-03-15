@@ -1,13 +1,8 @@
 import {Flags} from '@oclif/core'
-import constants from '../../../utils/constants'
 import BaseCommand from '../../../commons/base-command'
 
 export default class CreateSpotOrder extends BaseCommand {
   static description = 'Create spot'
-
-  static examples = [
-    `$ ${constants.cliName} orders spot create`,
-  ]
 
   static flags = {
     json: Flags.boolean({description: 'Print a json output', required: false}),
@@ -36,15 +31,15 @@ export default class CreateSpotOrder extends BaseCommand {
       providerId: params.providerId,
       bundleId: params.bundleId,
       dcId: params.dcId,
-      templateId: params.templateId
+      templateId: params.templateId,
     }
     const spotParamsResponse = await publicApiService.get('orders/check-spot-price', spotParamsRequest)
     const spotParams = {
       spotPrice: spotParamsResponse.data[0].order.pricePerUnit,
-      interruptionBehavior: "DELETE",
+      interruptionBehavior: 'DELETE',
       currency: spotParamsResponse.data[0].order.currency,
-      spotType: "ONE_TIME"
-    };
+      spotType: 'ONE_TIME',
+    }
 
     const request = {
       productType: 'SPOT_VM',
@@ -56,7 +51,7 @@ export default class CreateSpotOrder extends BaseCommand {
         cloudType: params.cloudType,
         templateId: params.templateId,
         dcId: params.dcId,
-        spotParams
+        spotParams,
       },
       params: {
         dcId: params.dcId,

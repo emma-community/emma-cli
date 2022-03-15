@@ -1,5 +1,4 @@
 import {Flags} from '@oclif/core'
-import constants from '../../../../utils/constants'
 import BaseCommand from '../../../../commons/base-command'
 
 export default class GetSecurityGroups extends BaseCommand {

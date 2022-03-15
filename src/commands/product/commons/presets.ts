@@ -1,14 +1,8 @@
 import {Flags} from '@oclif/core'
-import constants from '../../../utils/constants'
 import BaseCommand from '../../../commons/base-command'
 
-export default class Templates extends BaseCommand {
-  static description = 'Get list of templates'
-
-  static examples = [
-    `$ ${constants.cliName} flex templates`,
-    `$ ${constants.cliName} flex templates {id}`,
-  ]
+export default class Presets extends BaseCommand {
+  static description = 'Get list of presets'
 
   static flags = {
     json: Flags.boolean({description: 'Print a json output', required: false}),
@@ -24,15 +18,15 @@ export default class Templates extends BaseCommand {
   ]
 
   async run(): Promise<any> {
-    const {args, flags} = await this.parse(Templates)
+    const {args, flags} = await this.parse(Presets)
     const params = this.getParamsMap(flags)
     const publicApiService = this.getPublicApiService()
 
     if (args.id) {
-      const response = await publicApiService.get(`flex/templates/${args.id}`, params)
+      const response = await publicApiService.get(`flex/presets/${args.id}`, params)
       this.printObject(flags, response.data)
     } else {
-      const response = await publicApiService.get('flex/templates', params)
+      const response = await publicApiService.get('flex/presets', params)
       this.printArray(flags, response.data)
     }
   }

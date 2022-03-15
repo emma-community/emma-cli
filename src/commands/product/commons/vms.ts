@@ -1,13 +1,8 @@
 import {Flags} from '@oclif/core'
-import constants from '../../../utils/constants'
 import BaseCommand from '../../../commons/base-command'
 
-export default class WizardTuples extends BaseCommand {
-  static description = 'Get list of wizard tuples'
-
-  static examples = [
-    `$ ${constants.cliName} flex wizard-tuples`,
-  ]
+export default class Vms extends BaseCommand {
+  static description = 'Get vm details'
 
   static flags = {
     json: Flags.boolean({description: 'Print a json output', required: false}),
@@ -15,14 +10,15 @@ export default class WizardTuples extends BaseCommand {
   }
 
   static args = [
+    {name: 'id', description: 'Id of requested vm', required: true},
   ]
 
   async run(): Promise<any> {
-    const {flags} = await this.parse(WizardTuples)
+    const {args, flags} = await this.parse(Vms)
     const params = this.getParamsMap(flags)
     const publicApiService = this.getPublicApiService()
 
-    const response = await publicApiService.get('flex/wizard-tuples', params)
-    this.printArray(flags, response.data)
+    const response = await publicApiService.get(`flex/vms/${args.id}`, params)
+    this.printObject(flags, response.data)
   }
 }

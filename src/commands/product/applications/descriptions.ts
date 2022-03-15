@@ -1,13 +1,8 @@
 import {Flags} from '@oclif/core'
-import constants from '../../../utils/constants'
 import BaseCommand from '../../../commons/base-command'
 
 export default class Descriptions extends BaseCommand {
   static description = 'Get list of full application descriptions'
-
-  static examples = [
-    `$ ${constants.cliName} estore descriptions`,
-  ]
 
   static flags = {
     json: Flags.boolean({description: 'Print a json output', required: false}),
