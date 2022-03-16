@@ -1,4 +1,4 @@
-import BaseCommand from '../../../commons/base-command'
+import BaseCommand from '../../commons/base-command'
 
 export default class Logout extends BaseCommand {
   static description = 'Log out from emma platform'

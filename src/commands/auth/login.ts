@@ -1,5 +1,5 @@
 import {Flags} from '@oclif/core'
-import BaseCommand from '../../../commons/base-command'
+import BaseCommand from '../../commons/base-command'
 
 export default class Login extends BaseCommand {
   static description = 'Login in emma platform'
