@@ -1,5 +1,5 @@
 import BaseCommand from '../../commons/base-command'
-import {Flags} from "@oclif/core";
+import {Flags} from '@oclif/core'
 
 export default class Info extends BaseCommand {
   static description = 'Get login information'
