@@ -16,7 +16,7 @@ $ npm install -g emmacli
 $ emmacli COMMAND
 running command...
 $ emmacli (--version)
-emmacli/0.0.1 linux-x64 node-v12.22.9
+emmacli/0.0.2 linux-x64 node-v12.22.9
 $ emmacli --help [COMMAND]
 USAGE
   $ emmacli COMMAND
@@ -25,52 +25,117 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
+* [`emmacli auth info`](#emmacli-auth-info)
+* [`emmacli auth login`](#emmacli-auth-login)
+* [`emmacli auth logout`](#emmacli-auth-logout)
 * [`emmacli company`](#emmacli-company)
-* [`emmacli estore descriptions`](#emmacli-estore-descriptions)
-* [`emmacli flex bundles [ID]`](#emmacli-flex-bundles-id)
-* [`emmacli flex locations [ID]`](#emmacli-flex-locations-id)
-* [`emmacli flex presets [ID]`](#emmacli-flex-presets-id)
-* [`emmacli flex projects [ID]`](#emmacli-flex-projects-id)
-* [`emmacli flex providers [ID]`](#emmacli-flex-providers-id)
-* [`emmacli flex templates [ID]`](#emmacli-flex-templates-id)
-* [`emmacli flex vms ID`](#emmacli-flex-vms-id)
-* [`emmacli flex wizard-tuples`](#emmacli-flex-wizard-tuples)
-* [`emmacli flex wizard-tuples-advanced`](#emmacli-flex-wizard-tuples-advanced)
-* [`emmacli flex wizard-tuples-spot`](#emmacli-flex-wizard-tuples-spot)
-* [`emmacli groups`](#emmacli-groups)
-* [`emmacli login`](#emmacli-login)
-* [`emmacli logout`](#emmacli-logout)
-* [`emmacli orders [ID]`](#emmacli-orders-id)
-* [`emmacli orders check-spot-price`](#emmacli-orders-check-spot-price)
-* [`emmacli orders templates`](#emmacli-orders-templates)
-* [`emmacli orders vm create`](#emmacli-orders-vm-create)
-* [`emmacli orders vm delete`](#emmacli-orders-vm-delete)
-* [`emmacli orders vm reboot`](#emmacli-orders-vm-reboot)
-* [`emmacli orders vm shutdown`](#emmacli-orders-vm-shutdown)
-* [`emmacli orders vm snapshot`](#emmacli-orders-vm-snapshot)
-* [`emmacli orders vm start`](#emmacli-orders-vm-start)
-* [`emmacli permissionSets [ID]`](#emmacli-permissionsets-id)
-* [`emmacli permissionSets current`](#emmacli-permissionsets-current)
-* [`emmacli permissionSets default [ID]`](#emmacli-permissionsets-default-id)
-* [`emmacli pricing`](#emmacli-pricing)
-* [`emmacli pricing current`](#emmacli-pricing-current)
+* [`emmacli company groups`](#emmacli-company-groups)
+* [`emmacli company limits`](#emmacli-company-limits)
+* [`emmacli company limits exceed-history`](#emmacli-company-limits-exceed-history)
+* [`emmacli company orders [ID]`](#emmacli-company-orders-id)
+* [`emmacli company orders templates`](#emmacli-company-orders-templates)
+* [`emmacli company permission-sets [ID]`](#emmacli-company-permission-sets-id)
+* [`emmacli company permission-sets current`](#emmacli-company-permission-sets-current)
+* [`emmacli company permission-sets default [ID]`](#emmacli-company-permission-sets-default-id)
+* [`emmacli company pricings`](#emmacli-company-pricings)
+* [`emmacli company pricings current`](#emmacli-company-pricings-current)
+* [`emmacli company projects`](#emmacli-company-projects)
+* [`emmacli company projects current`](#emmacli-company-projects-current)
+* [`emmacli company roles [ID]`](#emmacli-company-roles-id)
+* [`emmacli company roles default [ID]`](#emmacli-company-roles-default-id)
+* [`emmacli company tickets [UID]`](#emmacli-company-tickets-uid)
+* [`emmacli company tickets comments UID`](#emmacli-company-tickets-comments-uid)
+* [`emmacli company tickets search`](#emmacli-company-tickets-search)
+* [`emmacli company tickets statistic`](#emmacli-company-tickets-statistic)
+* [`emmacli company users ID`](#emmacli-company-users-id)
 * [`emmacli products`](#emmacli-products)
 * [`emmacli products applications [ID]`](#emmacli-products-applications-id)
-* [`emmacli products descriptions`](#emmacli-products-descriptions)
-* [`emmacli products k8s [ID]`](#emmacli-products-k8s-id)
+* [`emmacli products applications create`](#emmacli-products-applications-create)
+* [`emmacli products applications delete`](#emmacli-products-applications-delete)
+* [`emmacli products applications descriptions`](#emmacli-products-applications-descriptions)
+* [`emmacli products applications schema`](#emmacli-products-applications-schema)
+* [`emmacli products clusters [ID]`](#emmacli-products-clusters-id)
+* [`emmacli products clusters create`](#emmacli-products-clusters-create)
+* [`emmacli products clusters schema`](#emmacli-products-clusters-schema)
+* [`emmacli products commons available-providers ID`](#emmacli-products-commons-available-providers-id)
+* [`emmacli products commons bundles [ID]`](#emmacli-products-commons-bundles-id)
+* [`emmacli products commons descriptions`](#emmacli-products-commons-descriptions)
+* [`emmacli products commons locations [ID]`](#emmacli-products-commons-locations-id)
+* [`emmacli products commons presets [ID]`](#emmacli-products-commons-presets-id)
+* [`emmacli products commons projects [ID]`](#emmacli-products-commons-projects-id)
+* [`emmacli products commons providers [ID]`](#emmacli-products-commons-providers-id)
+* [`emmacli products commons ssh`](#emmacli-products-commons-ssh)
+* [`emmacli products commons templates [ID]`](#emmacli-products-commons-templates-id)
+* [`emmacli products commons vms ID`](#emmacli-products-commons-vms-id)
+* [`emmacli products commons wizard-tuples`](#emmacli-products-commons-wizard-tuples)
+* [`emmacli products commons wizard-tuples-advanced`](#emmacli-products-commons-wizard-tuples-advanced)
+* [`emmacli products commons wizard-tuples-spot`](#emmacli-products-commons-wizard-tuples-spot)
+* [`emmacli products networks security-groups`](#emmacli-products-networks-security-groups)
+* [`emmacli products networks security-groups add-rule`](#emmacli-products-networks-security-groups-add-rule)
+* [`emmacli products networks security-groups update`](#emmacli-products-networks-security-groups-update)
+* [`emmacli products spots`](#emmacli-products-spots)
+* [`emmacli products spots check-spot-price`](#emmacli-products-spots-check-spot-price)
+* [`emmacli products spots create`](#emmacli-products-spots-create)
+* [`emmacli products spots delete`](#emmacli-products-spots-delete)
+* [`emmacli products spots reboot`](#emmacli-products-spots-reboot)
+* [`emmacli products spots shutdown`](#emmacli-products-spots-shutdown)
+* [`emmacli products spots snapshot`](#emmacli-products-spots-snapshot)
+* [`emmacli products spots start`](#emmacli-products-spots-start)
 * [`emmacli products vms`](#emmacli-products-vms)
-* [`emmacli projects`](#emmacli-projects)
-* [`emmacli projects current`](#emmacli-projects-current)
-* [`emmacli rate limits-exceed-history`](#emmacli-rate-limits-exceed-history)
-* [`emmacli rate limits-state`](#emmacli-rate-limits-state)
-* [`emmacli roles [ID]`](#emmacli-roles-id)
-* [`emmacli roles default [ID]`](#emmacli-roles-default-id)
-* [`emmacli ssh`](#emmacli-ssh)
-* [`emmacli tickets [UID]`](#emmacli-tickets-uid)
-* [`emmacli tickets comments UID`](#emmacli-tickets-comments-uid)
-* [`emmacli tickets search`](#emmacli-tickets-search)
-* [`emmacli tickets statistic`](#emmacli-tickets-statistic)
-* [`emmacli users ID`](#emmacli-users-id)
+* [`emmacli products vms clone`](#emmacli-products-vms-clone)
+* [`emmacli products vms create`](#emmacli-products-vms-create)
+* [`emmacli products vms delete`](#emmacli-products-vms-delete)
+* [`emmacli products vms reboot`](#emmacli-products-vms-reboot)
+* [`emmacli products vms shutdown`](#emmacli-products-vms-shutdown)
+* [`emmacli products vms snapshot`](#emmacli-products-vms-snapshot)
+* [`emmacli products vms start`](#emmacli-products-vms-start)
+* [`emmacli products vms transfer`](#emmacli-products-vms-transfer)
+
+## `emmacli auth info`
+
+Get login information
+
+```
+USAGE
+  $ emmacli auth info [--json] [--yaml]
+
+FLAGS
+  --json  Print a json output
+  --yaml  Print a yaml output
+
+DESCRIPTION
+  Get login information
+```
+
+## `emmacli auth login`
+
+Login in emma platform
+
+```
+USAGE
+  $ emmacli auth login --clientId <value> --clientSecret <value> [--baseUrl <value>] [--avatarCode <value>]
+
+FLAGS
+  --avatarCode=<value>    Base avatar code in emma platform instance
+  --baseUrl=<value>       Base url for emma platform instance
+  --clientId=<value>      (required) Service App client id
+  --clientSecret=<value>  (required) Service App client secret
+
+DESCRIPTION
+  Login in emma platform
+```
+
+## `emmacli auth logout`
+
+Log out from emma platform
+
+```
+USAGE
+  $ emmacli auth logout
+
+DESCRIPTION
+  Log out from emma platform
+```
 
 ## `emmacli company`
 
@@ -86,20 +151,422 @@ FLAGS
 
 DESCRIPTION
   Get company information
-
-EXAMPLES
-  $ emmacli company
 ```
 
-_See code: [src/commands/company/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.1/src/commands/company/index.ts)_
+_See code: [src/commands/company/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.2/src/commands/company/index.ts)_
 
-## `emmacli estore descriptions`
+## `emmacli company groups`
+
+Get list of current project groups
+
+```
+USAGE
+  $ emmacli company groups [--json] [--yaml]
+
+FLAGS
+  --json  Print a json output
+  --yaml  Print a yaml output
+
+DESCRIPTION
+  Get list of current project groups
+```
+
+## `emmacli company limits`
+
+Get company rate limit state
+
+```
+USAGE
+  $ emmacli company limits [--json] [--yaml]
+
+FLAGS
+  --json  Print a json output
+  --yaml  Print a yaml output
+
+DESCRIPTION
+  Get company rate limit state
+```
+
+## `emmacli company limits exceed-history`
+
+Get current company project payable requests count
+
+```
+USAGE
+  $ emmacli company limits exceed-history --startPeriodUnixTimestamp <value> --endPeriodUnixTimestamp <value> [--json] [--yaml]
+    [--companyLimits]
+
+FLAGS
+  --companyLimits                     Include company exceed history
+  --endPeriodUnixTimestamp=<value>    (required) End period for limits search (in unix timestamp)
+  --json                              Print a json output
+  --startPeriodUnixTimestamp=<value>  (required) Start period for limits search (in unix timestamp)
+  --yaml                              Print a yaml output
+
+DESCRIPTION
+  Get current company project payable requests count
+```
+
+## `emmacli company orders [ID]`
+
+Get list of current company orders
+
+```
+USAGE
+  $ emmacli company orders [ID] [--json] [--yaml]
+
+ARGUMENTS
+  ID  Id of requested order
+
+FLAGS
+  --json  Print a json output
+  --yaml  Print a yaml output
+
+DESCRIPTION
+  Get list of current company orders
+```
+
+## `emmacli company orders templates`
+
+Get list of current company order templates
+
+```
+USAGE
+  $ emmacli company orders templates [--json] [--yaml]
+
+FLAGS
+  --json  Print a json output
+  --yaml  Print a yaml output
+
+DESCRIPTION
+  Get list of current company order templates
+```
+
+## `emmacli company permission-sets [ID]`
+
+Get list of current company permission set
+
+```
+USAGE
+  $ emmacli company permission-sets [ID] [--json] [--yaml]
+
+ARGUMENTS
+  ID  Id of requested permissionSet
+
+FLAGS
+  --json  Print a json output
+  --yaml  Print a yaml output
+
+DESCRIPTION
+  Get list of current company permission set
+```
+
+## `emmacli company permission-sets current`
+
+Get permission set for current client
+
+```
+USAGE
+  $ emmacli company permission-sets current [--json] [--yaml]
+
+FLAGS
+  --json  Print a json output
+  --yaml  Print a yaml output
+
+DESCRIPTION
+  Get permission set for current client
+```
+
+## `emmacli company permission-sets default [ID]`
+
+Get list of current company default permission set
+
+```
+USAGE
+  $ emmacli company permission-sets default [ID] [--json] [--yaml]
+
+ARGUMENTS
+  ID  Id of requested permissionSet
+
+FLAGS
+  --json  Print a json output
+  --yaml  Print a yaml output
+
+DESCRIPTION
+  Get list of current company default permission set
+```
+
+## `emmacli company pricings`
+
+Get a list of pricing
+
+```
+USAGE
+  $ emmacli company pricings [--json] [--yaml]
+
+FLAGS
+  --json  Print a json output
+  --yaml  Print a yaml output
+
+DESCRIPTION
+  Get a list of pricing
+```
+
+## `emmacli company pricings current`
+
+Get the current company pricing
+
+```
+USAGE
+  $ emmacli company pricings current [--json] [--yaml]
+
+FLAGS
+  --json  Print a json output
+  --yaml  Print a yaml output
+
+DESCRIPTION
+  Get the current company pricing
+```
+
+## `emmacli company projects`
+
+Get list of company's projects
+
+```
+USAGE
+  $ emmacli company projects [--json] [--yaml]
+
+FLAGS
+  --json  Print a json output
+  --yaml  Print a yaml output
+
+DESCRIPTION
+  Get list of company's projects
+```
+
+## `emmacli company projects current`
+
+Get current company project
+
+```
+USAGE
+  $ emmacli company projects current [--json] [--yaml]
+
+FLAGS
+  --json  Print a json output
+  --yaml  Print a yaml output
+
+DESCRIPTION
+  Get current company project
+```
+
+## `emmacli company roles [ID]`
+
+Get a list of company roles
+
+```
+USAGE
+  $ emmacli company roles [ID] [--json] [--yaml]
+
+ARGUMENTS
+  ID  Id of requested role
+
+FLAGS
+  --json  Print a json output
+  --yaml  Print a yaml output
+
+DESCRIPTION
+  Get a list of company roles
+```
+
+## `emmacli company roles default [ID]`
+
+Get a list of default roles
+
+```
+USAGE
+  $ emmacli company roles default [ID] [--json] [--yaml]
+
+ARGUMENTS
+  ID  Id of requested role
+
+FLAGS
+  --json  Print a json output
+  --yaml  Print a yaml output
+
+DESCRIPTION
+  Get a list of default roles
+```
+
+## `emmacli company tickets [UID]`
+
+Get tickets
+
+```
+USAGE
+  $ emmacli company tickets [UID] [--json] [--yaml]
+
+ARGUMENTS
+  UID  Uid of requested ticket
+
+FLAGS
+  --json  Print a json output
+  --yaml  Print a yaml output
+
+DESCRIPTION
+  Get tickets
+```
+
+## `emmacli company tickets comments UID`
+
+Get ticket comments by ticket uid
+
+```
+USAGE
+  $ emmacli company tickets comments [UID] [--json] [--yaml]
+
+ARGUMENTS
+  UID  Uid of requested ticket
+
+FLAGS
+  --json  Print a json output
+  --yaml  Print a yaml output
+
+DESCRIPTION
+  Get ticket comments by ticket uid
+```
+
+## `emmacli company tickets search`
+
+Get all ticket by search term
+
+```
+USAGE
+  $ emmacli company tickets search --term <value> [--json] [--yaml]
+
+FLAGS
+  --json          Print a json output
+  --term=<value>  (required) Search term
+  --yaml          Print a yaml output
+
+DESCRIPTION
+  Get all ticket by search term
+```
+
+## `emmacli company tickets statistic`
+
+Get tickets statistic
+
+```
+USAGE
+  $ emmacli company tickets statistic [--json] [--yaml]
+
+FLAGS
+  --json  Print a json output
+  --yaml  Print a yaml output
+
+DESCRIPTION
+  Get tickets statistic
+```
+
+## `emmacli company users ID`
+
+Get user
+
+```
+USAGE
+  $ emmacli company users [ID] [--json] [--yaml]
+
+ARGUMENTS
+  ID  Id of requested user
+
+FLAGS
+  --json  Print a json output
+  --yaml  Print a yaml output
+
+DESCRIPTION
+  Get user
+```
+
+## `emmacli products`
+
+Get list of current project products
+
+```
+USAGE
+  $ emmacli products [--json] [--yaml]
+
+FLAGS
+  --json  Print a json output
+  --yaml  Print a yaml output
+
+DESCRIPTION
+  Get list of current project products
+```
+
+_See code: [src/commands/products/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.2/src/commands/products/index.ts)_
+
+## `emmacli products applications [ID]`
+
+Get list of current company applications
+
+```
+USAGE
+  $ emmacli products applications [ID] [--json] [--yaml]
+
+ARGUMENTS
+  ID  Id of requested product
+
+FLAGS
+  --json  Print a json output
+  --yaml  Print a yaml output
+
+DESCRIPTION
+  Get list of current company applications
+```
+
+## `emmacli products applications create`
+
+Create application by configuration schema
+
+```
+USAGE
+  $ emmacli products applications create [--json] [--yaml] [--configFile <value>] [--config <value>]
+
+FLAGS
+  --config=<value>      Config schema
+  --configFile=<value>  Config file location
+  --json                Print a json output
+  --yaml                Print a yaml output
+
+DESCRIPTION
+  Create application by configuration schema
+```
+
+## `emmacli products applications delete`
+
+Delete application
+
+```
+USAGE
+  $ emmacli products applications delete --productId <value> [--json] [--yaml]
+
+FLAGS
+  --json               Print a json output
+  --productId=<value>  (required) Product id of application
+  --yaml               Print a yaml output
+
+DESCRIPTION
+  Delete application
+```
+
+## `emmacli products applications descriptions`
 
 Get list of full application descriptions
 
 ```
 USAGE
-  $ emmacli estore descriptions [--json] [--yaml]
+  $ emmacli products applications descriptions [--json] [--yaml]
 
 FLAGS
   --json  Print a json output
@@ -107,18 +574,106 @@ FLAGS
 
 DESCRIPTION
   Get list of full application descriptions
-
-EXAMPLES
-  $ emmacli estore descriptions
 ```
 
-## `emmacli flex bundles [ID]`
+## `emmacli products applications schema`
+
+Get application configuration schema
+
+```
+USAGE
+  $ emmacli products applications schema --applicationId <value> [--json] [--yaml]
+
+FLAGS
+  --applicationId=<value>  (required) Application id
+  --json                   Print a json output
+  --yaml                   Print a yaml output
+
+DESCRIPTION
+  Get application configuration schema
+```
+
+## `emmacli products clusters [ID]`
+
+Get list of current company k8s clusters
+
+```
+USAGE
+  $ emmacli products clusters [ID] [--json] [--yaml]
+
+ARGUMENTS
+  ID  Id of requested product
+
+FLAGS
+  --json  Print a json output
+  --yaml  Print a yaml output
+
+DESCRIPTION
+  Get list of current company k8s clusters
+```
+
+## `emmacli products clusters create`
+
+Create cluster by configuration schema
+
+```
+USAGE
+  $ emmacli products clusters create [--json] [--yaml] [--configFile <value>] [--config <value>]
+
+FLAGS
+  --config=<value>      Config schema
+  --configFile=<value>  Config file location
+  --json                Print a json output
+  --yaml                Print a yaml output
+
+DESCRIPTION
+  Create cluster by configuration schema
+```
+
+## `emmacli products clusters schema`
+
+Get cluster configuration schema
+
+```
+USAGE
+  $ emmacli products clusters schema --applicationId <value> [--json] [--yaml]
+
+FLAGS
+  --applicationId=<value>  (required) Application id
+  --json                   Print a json output
+  --yaml                   Print a yaml output
+
+DESCRIPTION
+  Get cluster configuration schema
+```
+
+## `emmacli products commons available-providers ID`
+
+Get list of providers available for transfer a vm
+
+```
+USAGE
+  $ emmacli products commons available-providers [ID] [--json] [--yaml] [--itemCount <value>]
+
+ARGUMENTS
+  ID  Id of transferring vm
+
+FLAGS
+  --itemCount=<value>  Item count default 10000
+  --json               Print a json output
+  --yaml               Print a yaml output
+
+DESCRIPTION
+  Get list of providers available for transfer a vm
+```
+
+## `emmacli products commons bundles [ID]`
 
 Get list of bundles
 
 ```
 USAGE
-  $ emmacli flex bundles [ID] [--json] [--yaml] [--pageNumber <value>] [--itemCount <value>] [--sortBy <value>]
+  $ emmacli products commons bundles [ID] [--json] [--yaml] [--pageNumber <value>] [--itemCount <value>] [--sortBy <value>]
     [--order <value>]
 
 ARGUMENTS
@@ -134,20 +689,31 @@ FLAGS
 
 DESCRIPTION
   Get list of bundles
-
-EXAMPLES
-  $ emmacli flex bundles
-
-  $ emmacli flex bundles {id}
 ```
 
-## `emmacli flex locations [ID]`
+## `emmacli products commons descriptions`
+
+Get list of current company products descriptions
+
+```
+USAGE
+  $ emmacli products commons descriptions [--json] [--yaml]
+
+FLAGS
+  --json  Print a json output
+  --yaml  Print a yaml output
+
+DESCRIPTION
+  Get list of current company products descriptions
+```
+
+## `emmacli products commons locations [ID]`
 
 Get list of locations
 
 ```
 USAGE
-  $ emmacli flex locations [ID] [--json] [--yaml] [--pageNumber <value>] [--itemCount <value>] [--sortBy <value>]
+  $ emmacli products commons locations [ID] [--json] [--yaml] [--pageNumber <value>] [--itemCount <value>] [--sortBy <value>]
     [--order <value>]
 
 ARGUMENTS
@@ -163,20 +729,15 @@ FLAGS
 
 DESCRIPTION
   Get list of locations
-
-EXAMPLES
-  $ emmacli flex locations
-
-  $ emmacli flex locations {id}
 ```
 
-## `emmacli flex presets [ID]`
+## `emmacli products commons presets [ID]`
 
 Get list of presets
 
 ```
 USAGE
-  $ emmacli flex presets [ID] [--json] [--yaml] [--pageNumber <value>] [--itemCount <value>] [--sortBy <value>]
+  $ emmacli products commons presets [ID] [--json] [--yaml] [--pageNumber <value>] [--itemCount <value>] [--sortBy <value>]
     [--order <value>]
 
 ARGUMENTS
@@ -192,20 +753,15 @@ FLAGS
 
 DESCRIPTION
   Get list of presets
-
-EXAMPLES
-  $ emmacli flex presets
-
-  $ emmacli flex presets {id}
 ```
 
-## `emmacli flex projects [ID]`
+## `emmacli products commons projects [ID]`
 
 Get list of projects
 
 ```
 USAGE
-  $ emmacli flex projects [ID] [--json] [--yaml] [--pageNumber <value>] [--itemCount <value>] [--sortBy <value>]
+  $ emmacli products commons projects [ID] [--json] [--yaml] [--pageNumber <value>] [--itemCount <value>] [--sortBy <value>]
     [--order <value>]
 
 ARGUMENTS
@@ -221,20 +777,15 @@ FLAGS
 
 DESCRIPTION
   Get list of projects
-
-EXAMPLES
-  $ emmacli flex projects
-
-  $ emmacli flex projects {id}
 ```
 
-## `emmacli flex providers [ID]`
+## `emmacli products commons providers [ID]`
 
 Get list of providers
 
 ```
 USAGE
-  $ emmacli flex providers [ID] [--json] [--yaml] [--pageNumber <value>] [--itemCount <value>] [--sortBy <value>]
+  $ emmacli products commons providers [ID] [--json] [--yaml] [--pageNumber <value>] [--itemCount <value>] [--sortBy <value>]
     [--order <value>]
 
 ARGUMENTS
@@ -250,20 +801,31 @@ FLAGS
 
 DESCRIPTION
   Get list of providers
-
-EXAMPLES
-  $ emmacli flex providers
-
-  $ emmacli flex providers {id}
 ```
 
-## `emmacli flex templates [ID]`
+## `emmacli products commons ssh`
+
+Get ssh keys in company
+
+```
+USAGE
+  $ emmacli products commons ssh [--json] [--yaml]
+
+FLAGS
+  --json  Print a json output
+  --yaml  Print a yaml output
+
+DESCRIPTION
+  Get ssh keys in company
+```
+
+## `emmacli products commons templates [ID]`
 
 Get list of templates
 
 ```
 USAGE
-  $ emmacli flex templates [ID] [--json] [--yaml] [--pageNumber <value>] [--itemCount <value>] [--sortBy <value>]
+  $ emmacli products commons templates [ID] [--json] [--yaml] [--pageNumber <value>] [--itemCount <value>] [--sortBy <value>]
     [--order <value>]
 
 ARGUMENTS
@@ -279,20 +841,15 @@ FLAGS
 
 DESCRIPTION
   Get list of templates
-
-EXAMPLES
-  $ emmacli flex templates
-
-  $ emmacli flex templates {id}
 ```
 
-## `emmacli flex vms ID`
+## `emmacli products commons vms ID`
 
 Get vm details
 
 ```
 USAGE
-  $ emmacli flex vms [ID] [--json] [--yaml]
+  $ emmacli products commons vms [ID] [--json] [--yaml]
 
 ARGUMENTS
   ID  Id of requested vm
@@ -303,18 +860,15 @@ FLAGS
 
 DESCRIPTION
   Get vm details
-
-EXAMPLES
-  $ emmacli flex vms {id}
 ```
 
-## `emmacli flex wizard-tuples`
+## `emmacli products commons wizard-tuples`
 
 Get list of wizard tuples
 
 ```
 USAGE
-  $ emmacli flex wizard-tuples [--json] [--yaml]
+  $ emmacli products commons wizard-tuples [--json] [--yaml]
 
 FLAGS
   --json  Print a json output
@@ -322,18 +876,15 @@ FLAGS
 
 DESCRIPTION
   Get list of wizard tuples
-
-EXAMPLES
-  $ emmacli flex wizard-tuples
 ```
 
-## `emmacli flex wizard-tuples-advanced`
+## `emmacli products commons wizard-tuples-advanced`
 
 Get list of spot wizard tuples
 
 ```
 USAGE
-  $ emmacli flex wizard-tuples-advanced [--json] [--yaml] [--osFamily <value>] [--osType <value>] [--osVersion <value>]
+  $ emmacli products commons wizard-tuples-advanced [--json] [--yaml] [--osFamily <value>] [--osType <value>] [--osVersion <value>]
     [--locationsIds <value>] [--providers <value>] [--dcIds <value>] [--minCpu <value>] [--maxCpu <value>] [--minRam
     <value>] [--maxRam <value>] [--minStorage <value>] [--maxStorage <value>]
 
@@ -355,18 +906,15 @@ FLAGS
 
 DESCRIPTION
   Get list of spot wizard tuples
-
-EXAMPLES
-  $ emmacli flex wizard-tuples-spot
 ```
 
-## `emmacli flex wizard-tuples-spot`
+## `emmacli products commons wizard-tuples-spot`
 
 Get list of spot wizard tuples
 
 ```
 USAGE
-  $ emmacli flex wizard-tuples-spot [--json] [--yaml] [--itemCount <value>]
+  $ emmacli products commons wizard-tuples-spot [--json] [--yaml] [--itemCount <value>]
 
 FLAGS
   --itemCount=<value>  Return items count default 10000
@@ -375,105 +923,92 @@ FLAGS
 
 DESCRIPTION
   Get list of spot wizard tuples
-
-EXAMPLES
-  $ emmacli flex wizard-tuples-spot
 ```
 
-## `emmacli groups`
+## `emmacli products networks security-groups`
 
-Get list of current project groups
+Get list of current company security groups
 
 ```
 USAGE
-  $ emmacli groups [--json] [--yaml]
+  $ emmacli products networks security-groups [--json] [--yaml]
 
 FLAGS
   --json  Print a json output
   --yaml  Print a yaml output
 
 DESCRIPTION
-  Get list of current project groups
-
-EXAMPLES
-  $ emmacli groups
+  Get list of current company security groups
 ```
 
-_See code: [src/commands/groups/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.1/src/commands/groups/index.ts)_
+## `emmacli products networks security-groups add-rule`
 
-## `emmacli login`
-
-Login in emma platform
+Add rules to security groups
 
 ```
 USAGE
-  $ emmacli login --clientId <value> --clientSecret <value> [--baseUrl <value>] [--avatarCode <value>]
+  $ emmacli products networks security-groups add-rule --securityGroupsId <value> --policy ALLOW|DENY --direction INBOUND|OUTBOUND --protocol
+    all|TCP|UDP|ICMP|GRE|ESP|AH|SCTP|IPIP --ports <value> --ipRange <value> [--json] [--yaml] [--description <value>]
 
 FLAGS
-  --avatarCode=<value>    Base avatar code in emma platform instance
-  --baseUrl=<value>       Base url for emma platform instance
-  --clientId=<value>      (required) Service App client id
-  --clientSecret=<value>  (required) Service App client secret
+  --description=<value>                               Description of rule
+  --direction=(INBOUND|OUTBOUND)                      (required) Direction
+  --ipRange=<value>                                   (required) Ip range
+  --json                                              Print a json output
+  --policy=(ALLOW|DENY)                               (required) Policy type
+  --ports=<value>                                     (required) Rule ports
+  --protocol=(all|TCP|UDP|ICMP|GRE|ESP|AH|SCTP|IPIP)  (required) Protocol
+  --securityGroupsId=<value>                          (required) Security groups id
+  --yaml                                              Print a yaml output
 
 DESCRIPTION
-  Login in emma platform
-
-EXAMPLES
-  $ emmacli login
+  Add rules to security groups
 ```
 
-_See code: [src/commands/login/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.1/src/commands/login/index.ts)_
+## `emmacli products networks security-groups update`
 
-## `emmacli logout`
-
-Log out from emma platform
+Update security groups rules
 
 ```
 USAGE
-  $ emmacli logout
+  $ emmacli products networks security-groups update --securityGroupsId <value> --direction INBOUND|OUTBOUND [--json] [--yaml] [--configFile
+    <value>] [--config <value>]
+
+FLAGS
+  --config=<value>                Config schema
+  --configFile=<value>            Config file location
+  --direction=(INBOUND|OUTBOUND)  (required) Direction
+  --json                          Print a json output
+  --securityGroupsId=<value>      (required) Security groups id
+  --yaml                          Print a yaml output
 
 DESCRIPTION
-  Log out from emma platform
-
-EXAMPLES
-  $ emmacli logout
+  Update security groups rules
 ```
 
-_See code: [src/commands/logout/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.1/src/commands/logout/index.ts)_
+## `emmacli products spots`
 
-## `emmacli orders [ID]`
-
-Get list of current company orders
+Get list of current company spot vms
 
 ```
 USAGE
-  $ emmacli orders [ID] [--json] [--yaml]
-
-ARGUMENTS
-  ID  Id of requested order
+  $ emmacli products spots [--json] [--yaml]
 
 FLAGS
   --json  Print a json output
   --yaml  Print a yaml output
 
 DESCRIPTION
-  Get list of current company orders
-
-EXAMPLES
-  $ emmacli orders
-
-  $ emmacli orders {id}
+  Get list of current company spot vms
 ```
 
-_See code: [src/commands/orders/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.1/src/commands/orders/index.ts)_
-
-## `emmacli orders check-spot-price`
+## `emmacli products spots check-spot-price`
 
 Check spot price
 
 ```
 USAGE
-  $ emmacli orders check-spot-price --providerId <value> --bundleId <value> --dcId <value> --templateId <value> [--json]
+  $ emmacli products spots check-spot-price --providerId <value> --bundleId <value> --dcId <value> --templateId <value> [--json]
     [--yaml]
 
 FLAGS
@@ -486,37 +1021,162 @@ FLAGS
 
 DESCRIPTION
   Check spot price
-
-EXAMPLES
-  $ emmacli orders check-spot-price
 ```
 
-## `emmacli orders templates`
+## `emmacli products spots create`
 
-Get list of current company order templates
+Create spot
 
 ```
 USAGE
-  $ emmacli orders templates [--json] [--yaml]
+  $ emmacli products spots create --providerId <value> --locationId <value> --bundleId <value> --cloudType <value>
+    --templateId <value> --dcId <value> --sshId <value> --cloudNetworkType <value> --username <value> --hostname <value>
+    [--json] [--yaml]
+
+FLAGS
+  --bundleId=<value>          (required) Bundle id from wizard tuple
+  --cloudNetworkType=<value>  (required) Cloud network type
+  --cloudType=<value>         (required) Cloud type from wizard tuple
+  --dcId=<value>              (required) DC id from wizard tuple
+  --hostname=<value>          (required) Hostname of spot
+  --json                      Print a json output
+  --locationId=<value>        (required) Location id from wizard tuple
+  --providerId=<value>        (required) Provider id from wizard tuple
+  --sshId=<value>             (required) Ssh key id
+  --templateId=<value>        (required) Template id from wizard tuple
+  --username=<value>          (required) Username for authorization in spot
+  --yaml                      Print a yaml output
+
+DESCRIPTION
+  Create spot
+```
+
+## `emmacli products spots delete`
+
+Delete spot
+
+```
+USAGE
+  $ emmacli products spots delete --productId <value> [--json] [--yaml]
+
+FLAGS
+  --json               Print a json output
+  --productId=<value>  (required) Product id of spot
+  --yaml               Print a yaml output
+
+DESCRIPTION
+  Delete spot
+```
+
+## `emmacli products spots reboot`
+
+Reboot spot
+
+```
+USAGE
+  $ emmacli products spots reboot --productId <value> [--json] [--yaml]
+
+FLAGS
+  --json               Print a json output
+  --productId=<value>  (required) Product id of spot
+  --yaml               Print a yaml output
+
+DESCRIPTION
+  Reboot spot
+```
+
+## `emmacli products spots shutdown`
+
+Shutdown spot
+
+```
+USAGE
+  $ emmacli products spots shutdown --productId <value> [--json] [--yaml]
+
+FLAGS
+  --json               Print a json output
+  --productId=<value>  (required) Product id of spot
+  --yaml               Print a yaml output
+
+DESCRIPTION
+  Shutdown spot
+```
+
+## `emmacli products spots snapshot`
+
+Create spot snapshot
+
+```
+USAGE
+  $ emmacli products spots snapshot --productId <value> [--json] [--yaml]
+
+FLAGS
+  --json               Print a json output
+  --productId=<value>  (required) Product id of spot
+  --yaml               Print a yaml output
+
+DESCRIPTION
+  Create spot snapshot
+```
+
+## `emmacli products spots start`
+
+Start spot
+
+```
+USAGE
+  $ emmacli products spots start --productId <value> [--json] [--yaml]
+
+FLAGS
+  --json               Print a json output
+  --productId=<value>  (required) Product id of spot
+  --yaml               Print a yaml output
+
+DESCRIPTION
+  Start spot
+```
+
+## `emmacli products vms`
+
+Get list of current company vms (vm, spot, private vms)
+
+```
+USAGE
+  $ emmacli products vms [--json] [--yaml]
 
 FLAGS
   --json  Print a json output
   --yaml  Print a yaml output
 
 DESCRIPTION
-  Get list of current company order templates
-
-EXAMPLES
-  $ emmacli orders templates
+  Get list of current company vms (vm, spot, private vms)
 ```
 
-## `emmacli orders vm create`
+## `emmacli products vms clone`
+
+Clone vm
+
+```
+USAGE
+  $ emmacli products vms clone --productId <value> --newVmName <value> [--json] [--yaml]
+
+FLAGS
+  --json               Print a json output
+  --newVmName=<value>  (required) New Vm name
+  --productId=<value>  (required) Product id of vm
+  --yaml               Print a yaml output
+
+DESCRIPTION
+  Clone vm
+```
+
+## `emmacli products vms create`
 
 Create vm
 
 ```
 USAGE
-  $ emmacli orders vm create --providerId <value> --locationId <value> --bundleId <value> --cloudType <value>
+  $ emmacli products vms create --providerId <value> --locationId <value> --bundleId <value> --cloudType <value>
     --templateId <value> --dcId <value> --sshId <value> --cloudNetworkType <value> --username <value> --hostname <value>
     [--json] [--yaml]
 
@@ -536,18 +1196,15 @@ FLAGS
 
 DESCRIPTION
   Create vm
-
-EXAMPLES
-  $ emmacli orders vm create
 ```
 
-## `emmacli orders vm delete`
+## `emmacli products vms delete`
 
 Delete vm
 
 ```
 USAGE
-  $ emmacli orders vm delete --productId <value> [--json] [--yaml]
+  $ emmacli products vms delete --productId <value> [--json] [--yaml]
 
 FLAGS
   --json               Print a json output
@@ -556,18 +1213,15 @@ FLAGS
 
 DESCRIPTION
   Delete vm
-
-EXAMPLES
-  $ emmacli orders vm delete
 ```
 
-## `emmacli orders vm reboot`
+## `emmacli products vms reboot`
 
 Reboot vm
 
 ```
 USAGE
-  $ emmacli orders vm reboot --productId <value> [--json] [--yaml]
+  $ emmacli products vms reboot --productId <value> [--json] [--yaml]
 
 FLAGS
   --json               Print a json output
@@ -576,18 +1230,15 @@ FLAGS
 
 DESCRIPTION
   Reboot vm
-
-EXAMPLES
-  $ emmacli orders vm reboot
 ```
 
-## `emmacli orders vm shutdown`
+## `emmacli products vms shutdown`
 
 Shutdown vm
 
 ```
 USAGE
-  $ emmacli orders vm shutdown --productId <value> [--json] [--yaml]
+  $ emmacli products vms shutdown --productId <value> [--json] [--yaml]
 
 FLAGS
   --json               Print a json output
@@ -596,18 +1247,15 @@ FLAGS
 
 DESCRIPTION
   Shutdown vm
-
-EXAMPLES
-  $ emmacli orders vm shutdown
 ```
 
-## `emmacli orders vm snapshot`
+## `emmacli products vms snapshot`
 
 Create vm snapshot
 
 ```
 USAGE
-  $ emmacli orders vm snapshot --productId <value> [--json] [--yaml]
+  $ emmacli products vms snapshot --productId <value> [--json] [--yaml]
 
 FLAGS
   --json               Print a json output
@@ -616,18 +1264,15 @@ FLAGS
 
 DESCRIPTION
   Create vm snapshot
-
-EXAMPLES
-  $ emmacli orders vm snapshot
 ```
 
-## `emmacli orders vm start`
+## `emmacli products vms start`
 
 Start vm
 
 ```
 USAGE
-  $ emmacli orders vm start --productId <value> [--json] [--yaml]
+  $ emmacli products vms start --productId <value> [--json] [--yaml]
 
 FLAGS
   --json               Print a json output
@@ -636,488 +1281,27 @@ FLAGS
 
 DESCRIPTION
   Start vm
-
-EXAMPLES
-  $ emmacli orders vm start
 ```
 
-## `emmacli permissionSets [ID]`
+## `emmacli products vms transfer`
 
-Get list of current company permission set
+Transfer vm
 
 ```
 USAGE
-  $ emmacli permissionSets [ID] [--json] [--yaml]
-
-ARGUMENTS
-  ID  Id of requested permissionSet
+  $ emmacli products vms transfer --productId <value> --dcId <value> --providerId <value> --cloudType <value> [--json]
+    [--yaml] [--doNotDeleteSource]
 
 FLAGS
-  --json  Print a json output
-  --yaml  Print a yaml output
+  --cloudType=<value>   (required) Cloud type from available provider tuple
+  --dcId=<value>        (required) DC id from available provider tuple
+  --doNotDeleteSource   Print a yaml output
+  --json                Print a json output
+  --productId=<value>   (required) Product id of vm
+  --providerId=<value>  (required) Provider id from available provider tuple
+  --yaml                Print a yaml output
 
 DESCRIPTION
-  Get list of current company permission set
-
-EXAMPLES
-  $ emmacli permissionSets {id}
-
-  $ emmacli permissionSets
+  Transfer vm
 ```
-
-_See code: [src/commands/permissionSets/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.1/src/commands/permissionSets/index.ts)_
-
-## `emmacli permissionSets current`
-
-Get permission set for current client
-
-```
-USAGE
-  $ emmacli permissionSets current [--json] [--yaml]
-
-FLAGS
-  --json  Print a json output
-  --yaml  Print a yaml output
-
-DESCRIPTION
-  Get permission set for current client
-
-EXAMPLES
-  $ emmacli permissionSets current
-```
-
-## `emmacli permissionSets default [ID]`
-
-Get list of current company default permission set
-
-```
-USAGE
-  $ emmacli permissionSets default [ID] [--json] [--yaml]
-
-ARGUMENTS
-  ID  Id of requested permissionSet
-
-FLAGS
-  --json  Print a json output
-  --yaml  Print a yaml output
-
-DESCRIPTION
-  Get list of current company default permission set
-
-EXAMPLES
-  $ emmacli permissionSets default
-
-  $ emmacli permissionSets default {id}
-```
-
-## `emmacli pricing`
-
-Get a list of pricing
-
-```
-USAGE
-  $ emmacli pricing [--json] [--yaml]
-
-FLAGS
-  --json  Print a json output
-  --yaml  Print a yaml output
-
-DESCRIPTION
-  Get a list of pricing
-
-EXAMPLES
-  $ emmacli pricing
-```
-
-_See code: [src/commands/pricing/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.1/src/commands/pricing/index.ts)_
-
-## `emmacli pricing current`
-
-Get the current company pricing
-
-```
-USAGE
-  $ emmacli pricing current [--json] [--yaml]
-
-FLAGS
-  --json  Print a json output
-  --yaml  Print a yaml output
-
-DESCRIPTION
-  Get the current company pricing
-
-EXAMPLES
-  $ emmacli pricing current
-```
-
-## `emmacli products`
-
-Get list of current project products
-
-```
-USAGE
-  $ emmacli products [--json] [--yaml]
-
-FLAGS
-  --json  Print a json output
-  --yaml  Print a yaml output
-
-DESCRIPTION
-  Get list of current project products
-
-EXAMPLES
-  $ emmacli products
-```
-
-_See code: [src/commands/products/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.1/src/commands/products/index.ts)_
-
-## `emmacli products applications [ID]`
-
-Get list of current company applications
-
-```
-USAGE
-  $ emmacli products applications [ID] [--json] [--yaml]
-
-ARGUMENTS
-  ID  Id of requested product
-
-FLAGS
-  --json  Print a json output
-  --yaml  Print a yaml output
-
-DESCRIPTION
-  Get list of current company applications
-
-EXAMPLES
-  $ emmacli products applications
-
-  $ emmacli products applications {id}
-```
-
-## `emmacli products descriptions`
-
-Get list of current company products descriptions
-
-```
-USAGE
-  $ emmacli products descriptions [--json] [--yaml]
-
-FLAGS
-  --json  Print a json output
-  --yaml  Print a yaml output
-
-DESCRIPTION
-  Get list of current company products descriptions
-
-EXAMPLES
-  $ emmacli products descriptions
-```
-
-## `emmacli products k8s [ID]`
-
-Get list of current company k8s clusters
-
-```
-USAGE
-  $ emmacli products k8s [ID] [--json] [--yaml]
-
-ARGUMENTS
-  ID  Id of requested product
-
-FLAGS
-  --json  Print a json output
-  --yaml  Print a yaml output
-
-DESCRIPTION
-  Get list of current company k8s clusters
-
-EXAMPLES
-  $ emmacli products k8s
-
-  $ emmacli products k8s {id}
-```
-
-## `emmacli products vms`
-
-Get list of current company vms (vm, spot, private vms)
-
-```
-USAGE
-  $ emmacli products vms [--json] [--yaml]
-
-FLAGS
-  --json  Print a json output
-  --yaml  Print a yaml output
-
-DESCRIPTION
-  Get list of current company vms (vm, spot, private vms)
-
-EXAMPLES
-  $ emmacli products vms
-```
-
-## `emmacli projects`
-
-Get list of company's projects
-
-```
-USAGE
-  $ emmacli projects [--json] [--yaml]
-
-FLAGS
-  --json  Print a json output
-  --yaml  Print a yaml output
-
-DESCRIPTION
-  Get list of company's projects
-
-EXAMPLES
-  $ emmacli projects
-```
-
-_See code: [src/commands/projects/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.1/src/commands/projects/index.ts)_
-
-## `emmacli projects current`
-
-Get current company project
-
-```
-USAGE
-  $ emmacli projects current [--json] [--yaml]
-
-FLAGS
-  --json  Print a json output
-  --yaml  Print a yaml output
-
-DESCRIPTION
-  Get current company project
-
-EXAMPLES
-  $ emmacli projects current
-```
-
-## `emmacli rate limits-exceed-history`
-
-Get current company project payable requests count
-
-```
-USAGE
-  $ emmacli rate limits-exceed-history --startPeriodUnixTimestamp <value> --endPeriodUnixTimestamp <value> [--json] [--yaml]
-    [--companyLimits]
-
-FLAGS
-  --companyLimits                     Include company exceed history
-  --endPeriodUnixTimestamp=<value>    (required) End period for limits search (in unix timestamp)
-  --json                              Print a json output
-  --startPeriodUnixTimestamp=<value>  (required) Start period for limits search (in unix timestamp)
-  --yaml                              Print a yaml output
-
-DESCRIPTION
-  Get current company project payable requests count
-
-EXAMPLES
-  $ emmacli rate limits-exceed-history
-```
-
-## `emmacli rate limits-state`
-
-Get company rate limit state
-
-```
-USAGE
-  $ emmacli rate limits-state [--json] [--yaml]
-
-FLAGS
-  --json  Print a json output
-  --yaml  Print a yaml output
-
-DESCRIPTION
-  Get company rate limit state
-
-EXAMPLES
-  $ emmacli rate limits-state
-```
-
-## `emmacli roles [ID]`
-
-Get a list of company roles
-
-```
-USAGE
-  $ emmacli roles [ID] [--json] [--yaml]
-
-ARGUMENTS
-  ID  Id of requested role
-
-FLAGS
-  --json  Print a json output
-  --yaml  Print a yaml output
-
-DESCRIPTION
-  Get a list of company roles
-
-EXAMPLES
-  $ emmacli roles {id}
-
-  $ emmacli roles
-```
-
-_See code: [src/commands/roles/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.1/src/commands/roles/index.ts)_
-
-## `emmacli roles default [ID]`
-
-Get a list of default roles
-
-```
-USAGE
-  $ emmacli roles default [ID] [--json] [--yaml]
-
-ARGUMENTS
-  ID  Id of requested role
-
-FLAGS
-  --json  Print a json output
-  --yaml  Print a yaml output
-
-DESCRIPTION
-  Get a list of default roles
-
-EXAMPLES
-  $ emmacli roles default
-
-  $ emmacli roles default {id}
-```
-
-## `emmacli ssh`
-
-Get ssh keys in company
-
-```
-USAGE
-  $ emmacli ssh [--json] [--yaml]
-
-FLAGS
-  --json  Print a json output
-  --yaml  Print a yaml output
-
-DESCRIPTION
-  Get ssh keys in company
-
-EXAMPLES
-  $ emmacli ssh
-```
-
-_See code: [src/commands/ssh/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.1/src/commands/ssh/index.ts)_
-
-## `emmacli tickets [UID]`
-
-Get tickets
-
-```
-USAGE
-  $ emmacli tickets [UID] [--json] [--yaml]
-
-ARGUMENTS
-  UID  Uid of requested ticket
-
-FLAGS
-  --json  Print a json output
-  --yaml  Print a yaml output
-
-DESCRIPTION
-  Get tickets
-
-EXAMPLES
-  $ emmacli tickets
-
-  $ emmacli tickets {uid}
-```
-
-_See code: [src/commands/tickets/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.1/src/commands/tickets/index.ts)_
-
-## `emmacli tickets comments UID`
-
-Get ticket comments by ticket uid
-
-```
-USAGE
-  $ emmacli tickets comments [UID] [--json] [--yaml]
-
-ARGUMENTS
-  UID  Uid of requested ticket
-
-FLAGS
-  --json  Print a json output
-  --yaml  Print a yaml output
-
-DESCRIPTION
-  Get ticket comments by ticket uid
-
-EXAMPLES
-  $ emmacli tickets comments {uid}
-```
-
-## `emmacli tickets search`
-
-Get all ticket by search term
-
-```
-USAGE
-  $ emmacli tickets search --term <value> [--json] [--yaml]
-
-FLAGS
-  --json          Print a json output
-  --term=<value>  (required) Search term
-  --yaml          Print a yaml output
-
-DESCRIPTION
-  Get all ticket by search term
-
-EXAMPLES
-  $ emmacli tickets search
-```
-
-## `emmacli tickets statistic`
-
-Get tickets statistic
-
-```
-USAGE
-  $ emmacli tickets statistic [--json] [--yaml]
-
-FLAGS
-  --json  Print a json output
-  --yaml  Print a yaml output
-
-DESCRIPTION
-  Get tickets statistic
-
-EXAMPLES
-  $ emmacli tickets statistic
-```
-
-## `emmacli users ID`
-
-Get user
-
-```
-USAGE
-  $ emmacli users [ID] [--json] [--yaml]
-
-ARGUMENTS
-  ID  Id of requested user
-
-FLAGS
-  --json  Print a json output
-  --yaml  Print a yaml output
-
-DESCRIPTION
-  Get user
-
-EXAMPLES
-  $ emmacli users {id}
-```
-
-_See code: [src/commands/users/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.1/src/commands/users/index.ts)_
 <!-- commandsstop -->
