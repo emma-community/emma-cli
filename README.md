@@ -16,7 +16,7 @@ $ npm install -g emmacli
 $ emmacli COMMAND
 running command...
 $ emmacli (--version)
-emmacli/0.0.2 linux-x64 node-v12.22.9
+emmacli/0.0.3 linux-x64 node-v12.22.9
 $ emmacli --help [COMMAND]
 USAGE
   $ emmacli COMMAND
@@ -153,7 +153,7 @@ DESCRIPTION
   Get company information
 ```
 
-_See code: [src/commands/company/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.2/src/commands/company/index.ts)_
+_See code: [src/commands/company/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.3/src/commands/company/index.ts)_
 
 ## `emmacli company groups`
 
@@ -504,7 +504,7 @@ DESCRIPTION
   Get list of current project products
 ```
 
-_See code: [src/commands/products/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.2/src/commands/products/index.ts)_
+_See code: [src/commands/products/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.3/src/commands/products/index.ts)_
 
 ## `emmacli products applications [ID]`
 
