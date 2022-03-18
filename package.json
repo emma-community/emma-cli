@@ -70,14 +70,14 @@
       "company:projects": { "description": "Company projects information" },
       "company:roles": { "description": "Company roles information" },
       "company:tickets": { "description": "Company tickets information" },
-      "product": { "description": "Manage company products" },
-      "product:applications": { "description": "Manage company applications" },
-      "product:clusters": { "description": "Manage company k8s clusters" },
-      "product:common": { "description": "Products common operations" },
-      "product:networks": { "description": "Manage company networks security groups" },
-      "product:networks:security-groups": { "description": "Manage company networks security groups" },
-      "product:spots": { "description": "Manage company spots" },
-      "product:vms": { "description": "Manage company vms" }
+      "products": { "description": "Manage company products" },
+      "products:applications": { "description": "Manage company applications" },
+      "products:clusters": { "description": "Manage company k8s clusters" },
+      "products:common": { "description": "Products common operations" },
+      "products:networks": { "description": "Manage company networks security groups" },
+      "products:networks:security-groups": { "description": "Manage company networks security groups" },
+      "products:spots": { "description": "Manage company spots" },
+      "products:vms": { "description": "Manage company vms" }
     }
   },
   "repository": "MandarinSolutions/emma-cli",
