@@ -1,5 +1,5 @@
 import BaseCommand from '../commons/base-command'
-import {Help} from '@oclif/core';
+import {Help} from '@oclif/core'
 
 export default class HelpWrapper extends BaseCommand {
   static hidden = true
@@ -13,6 +13,8 @@ export default class HelpWrapper extends BaseCommand {
     // if topic name provided
     if (topicName) {
       const help = new Help(this.config)
+
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       await help.showTopicHelp({name: topicName})
     }
