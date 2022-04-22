@@ -61,16 +61,17 @@
       "identifier": "com.emma.cli"
     },
     "topics": {
+      "api": { "description": "API limits information" },
+      "api:limits": { "description": "API limits information" },
+      "applications": { "description": "Manage applications" },
       "auth": { "description": "Authorize in emma platform" },
-      "products": { "description": "Manage company products" },
-      "products:applications": { "description": "Manage company applications" },
-      "products:clusters": { "description": "Manage company k8s clusters" },
-      "products:commons": { "description": "Products common operations" },
-      "products:limits": { "description": "Company limits state information" },
-      "products:networks": { "description": "Manage company networks security groups" },
-      "products:networks:security-groups": { "description": "Manage company networks security groups" },
-      "products:spots": { "description": "Manage company spots" },
-      "products:vms": { "description": "Manage company vms" }
+      "clusters": { "description": "Manage k8s clusters" },
+      "commons": { "description": "Common entities operations" },
+      "networks": { "description": "Manage networks security groups" },
+      "networks:security-groups": { "description": "Manage networks security groups" },
+      "spots": { "description": "Manage spots" },
+      "vms": { "description": "Manage vms" },
+      "products": { "description": "List products" }
     }
   },
   "repository": "MandarinSolutions/emma-cli",
