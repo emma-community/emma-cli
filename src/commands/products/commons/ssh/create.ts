@@ -21,7 +21,7 @@ export default class CreateSsh extends BaseCommand {
 
     const request = {
       name: params.name,
-      publicKey : params.publicKey
+      publicKey: params.publicKey,
     }
 
     const response = await publicApiService.post('ssh', request, {})

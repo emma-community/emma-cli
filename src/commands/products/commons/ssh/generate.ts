@@ -22,8 +22,8 @@ export default class GenerateSsh extends BaseCommand {
 
     const request = {
       keyName: params.keyName,
-      userName : params.userName,
-      host: params.host
+      userName: params.userName,
+      host: params.host,
     }
 
     const response = await publicApiService.post('ssh/generate', request, {})
