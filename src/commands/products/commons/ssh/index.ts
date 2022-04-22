@@ -1,7 +1,7 @@
 import {Flags} from '@oclif/core'
-import BaseCommand from '../../../commons/base-command'
+import BaseCommand from '../../../../commons/base-command'
 
-export default class Ssh extends BaseCommand {
+export default class Index extends BaseCommand {
   static description = 'Get ssh keys in company'
 
   static flags = {
@@ -13,7 +13,7 @@ export default class Ssh extends BaseCommand {
   ]
 
   async run(): Promise<any> {
-    const {flags} = await this.parse(Ssh)
+    const {flags} = await this.parse(Index)
     const params = this.getParamsMap(flags)
     const publicApiService = this.getPublicApiService()
 
