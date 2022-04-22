@@ -28,26 +28,6 @@ USAGE
 * [`emmacli auth info`](#emmacli-auth-info)
 * [`emmacli auth login`](#emmacli-auth-login)
 * [`emmacli auth logout`](#emmacli-auth-logout)
-* [`emmacli company`](#emmacli-company)
-* [`emmacli company groups`](#emmacli-company-groups)
-* [`emmacli company limits`](#emmacli-company-limits)
-* [`emmacli company limits exceed-history`](#emmacli-company-limits-exceed-history)
-* [`emmacli company orders [ID]`](#emmacli-company-orders-id)
-* [`emmacli company orders templates`](#emmacli-company-orders-templates)
-* [`emmacli company permission-sets [ID]`](#emmacli-company-permission-sets-id)
-* [`emmacli company permission-sets current`](#emmacli-company-permission-sets-current)
-* [`emmacli company permission-sets default [ID]`](#emmacli-company-permission-sets-default-id)
-* [`emmacli company pricings`](#emmacli-company-pricings)
-* [`emmacli company pricings current`](#emmacli-company-pricings-current)
-* [`emmacli company projects`](#emmacli-company-projects)
-* [`emmacli company projects current`](#emmacli-company-projects-current)
-* [`emmacli company roles [ID]`](#emmacli-company-roles-id)
-* [`emmacli company roles default [ID]`](#emmacli-company-roles-default-id)
-* [`emmacli company tickets [UID]`](#emmacli-company-tickets-uid)
-* [`emmacli company tickets comments UID`](#emmacli-company-tickets-comments-uid)
-* [`emmacli company tickets search`](#emmacli-company-tickets-search)
-* [`emmacli company tickets statistic`](#emmacli-company-tickets-statistic)
-* [`emmacli company users ID`](#emmacli-company-users-id)
 * [`emmacli products`](#emmacli-products)
 * [`emmacli products applications [ID]`](#emmacli-products-applications-id)
 * [`emmacli products applications create`](#emmacli-products-applications-create)
@@ -65,11 +45,16 @@ USAGE
 * [`emmacli products commons projects [ID]`](#emmacli-products-commons-projects-id)
 * [`emmacli products commons providers [ID]`](#emmacli-products-commons-providers-id)
 * [`emmacli products commons ssh`](#emmacli-products-commons-ssh)
+* [`emmacli products commons ssh create`](#emmacli-products-commons-ssh-create)
+* [`emmacli products commons ssh delete ID`](#emmacli-products-commons-ssh-delete-id)
+* [`emmacli products commons ssh generate`](#emmacli-products-commons-ssh-generate)
 * [`emmacli products commons templates [ID]`](#emmacli-products-commons-templates-id)
 * [`emmacli products commons vms ID`](#emmacli-products-commons-vms-id)
 * [`emmacli products commons wizard-tuples`](#emmacli-products-commons-wizard-tuples)
 * [`emmacli products commons wizard-tuples-advanced`](#emmacli-products-commons-wizard-tuples-advanced)
 * [`emmacli products commons wizard-tuples-spot`](#emmacli-products-commons-wizard-tuples-spot)
+* [`emmacli products limits`](#emmacli-products-limits)
+* [`emmacli products limits exceed-history`](#emmacli-products-limits-exceed-history)
 * [`emmacli products networks security-groups`](#emmacli-products-networks-security-groups)
 * [`emmacli products networks security-groups add-rule`](#emmacli-products-networks-security-groups-add-rule)
 * [`emmacli products networks security-groups update`](#emmacli-products-networks-security-groups-update)
@@ -135,357 +120,6 @@ USAGE
 
 DESCRIPTION
   Log out from emma platform
-```
-
-## `emmacli company`
-
-Get company information
-
-```
-USAGE
-  $ emmacli company [--json] [--yaml]
-
-FLAGS
-  --json  Print a json output
-  --yaml  Print a yaml output
-
-DESCRIPTION
-  Get company information
-```
-
-_See code: [src/commands/company/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.4/src/commands/company/index.ts)_
-
-## `emmacli company groups`
-
-Get list of current project groups
-
-```
-USAGE
-  $ emmacli company groups [--json] [--yaml]
-
-FLAGS
-  --json  Print a json output
-  --yaml  Print a yaml output
-
-DESCRIPTION
-  Get list of current project groups
-```
-
-## `emmacli company limits`
-
-Get company rate limit state
-
-```
-USAGE
-  $ emmacli company limits [--json] [--yaml]
-
-FLAGS
-  --json  Print a json output
-  --yaml  Print a yaml output
-
-DESCRIPTION
-  Get company rate limit state
-```
-
-## `emmacli company limits exceed-history`
-
-Get current company project payable requests count
-
-```
-USAGE
-  $ emmacli company limits exceed-history --startPeriodUnixTimestamp <value> --endPeriodUnixTimestamp <value> [--json] [--yaml]
-    [--companyLimits]
-
-FLAGS
-  --companyLimits                     Include company exceed history
-  --endPeriodUnixTimestamp=<value>    (required) End period for limits search (in unix timestamp)
-  --json                              Print a json output
-  --startPeriodUnixTimestamp=<value>  (required) Start period for limits search (in unix timestamp)
-  --yaml                              Print a yaml output
-
-DESCRIPTION
-  Get current company project payable requests count
-```
-
-## `emmacli company orders [ID]`
-
-Get list of current company orders
-
-```
-USAGE
-  $ emmacli company orders [ID] [--json] [--yaml]
-
-ARGUMENTS
-  ID  Id of requested order
-
-FLAGS
-  --json  Print a json output
-  --yaml  Print a yaml output
-
-DESCRIPTION
-  Get list of current company orders
-```
-
-## `emmacli company orders templates`
-
-Get list of current company order templates
-
-```
-USAGE
-  $ emmacli company orders templates [--json] [--yaml]
-
-FLAGS
-  --json  Print a json output
-  --yaml  Print a yaml output
-
-DESCRIPTION
-  Get list of current company order templates
-```
-
-## `emmacli company permission-sets [ID]`
-
-Get list of current company permission set
-
-```
-USAGE
-  $ emmacli company permission-sets [ID] [--json] [--yaml]
-
-ARGUMENTS
-  ID  Id of requested permissionSet
-
-FLAGS
-  --json  Print a json output
-  --yaml  Print a yaml output
-
-DESCRIPTION
-  Get list of current company permission set
-```
-
-## `emmacli company permission-sets current`
-
-Get permission set for current client
-
-```
-USAGE
-  $ emmacli company permission-sets current [--json] [--yaml]
-
-FLAGS
-  --json  Print a json output
-  --yaml  Print a yaml output
-
-DESCRIPTION
-  Get permission set for current client
-```
-
-## `emmacli company permission-sets default [ID]`
-
-Get list of current company default permission set
-
-```
-USAGE
-  $ emmacli company permission-sets default [ID] [--json] [--yaml]
-
-ARGUMENTS
-  ID  Id of requested permissionSet
-
-FLAGS
-  --json  Print a json output
-  --yaml  Print a yaml output
-
-DESCRIPTION
-  Get list of current company default permission set
-```
-
-## `emmacli company pricings`
-
-Get a list of pricing
-
-```
-USAGE
-  $ emmacli company pricings [--json] [--yaml]
-
-FLAGS
-  --json  Print a json output
-  --yaml  Print a yaml output
-
-DESCRIPTION
-  Get a list of pricing
-```
-
-## `emmacli company pricings current`
-
-Get the current company pricing
-
-```
-USAGE
-  $ emmacli company pricings current [--json] [--yaml]
-
-FLAGS
-  --json  Print a json output
-  --yaml  Print a yaml output
-
-DESCRIPTION
-  Get the current company pricing
-```
-
-## `emmacli company projects`
-
-Get list of company's projects
-
-```
-USAGE
-  $ emmacli company projects [--json] [--yaml]
-
-FLAGS
-  --json  Print a json output
-  --yaml  Print a yaml output
-
-DESCRIPTION
-  Get list of company's projects
-```
-
-## `emmacli company projects current`
-
-Get current company project
-
-```
-USAGE
-  $ emmacli company projects current [--json] [--yaml]
-
-FLAGS
-  --json  Print a json output
-  --yaml  Print a yaml output
-
-DESCRIPTION
-  Get current company project
-```
-
-## `emmacli company roles [ID]`
-
-Get a list of company roles
-
-```
-USAGE
-  $ emmacli company roles [ID] [--json] [--yaml]
-
-ARGUMENTS
-  ID  Id of requested role
-
-FLAGS
-  --json  Print a json output
-  --yaml  Print a yaml output
-
-DESCRIPTION
-  Get a list of company roles
-```
-
-## `emmacli company roles default [ID]`
-
-Get a list of default roles
-
-```
-USAGE
-  $ emmacli company roles default [ID] [--json] [--yaml]
-
-ARGUMENTS
-  ID  Id of requested role
-
-FLAGS
-  --json  Print a json output
-  --yaml  Print a yaml output
-
-DESCRIPTION
-  Get a list of default roles
-```
-
-## `emmacli company tickets [UID]`
-
-Get tickets
-
-```
-USAGE
-  $ emmacli company tickets [UID] [--json] [--yaml]
-
-ARGUMENTS
-  UID  Uid of requested ticket
-
-FLAGS
-  --json  Print a json output
-  --yaml  Print a yaml output
-
-DESCRIPTION
-  Get tickets
-```
-
-## `emmacli company tickets comments UID`
-
-Get ticket comments by ticket uid
-
-```
-USAGE
-  $ emmacli company tickets comments [UID] [--json] [--yaml]
-
-ARGUMENTS
-  UID  Uid of requested ticket
-
-FLAGS
-  --json  Print a json output
-  --yaml  Print a yaml output
-
-DESCRIPTION
-  Get ticket comments by ticket uid
-```
-
-## `emmacli company tickets search`
-
-Get all ticket by search term
-
-```
-USAGE
-  $ emmacli company tickets search --term <value> [--json] [--yaml]
-
-FLAGS
-  --json          Print a json output
-  --term=<value>  (required) Search term
-  --yaml          Print a yaml output
-
-DESCRIPTION
-  Get all ticket by search term
-```
-
-## `emmacli company tickets statistic`
-
-Get tickets statistic
-
-```
-USAGE
-  $ emmacli company tickets statistic [--json] [--yaml]
-
-FLAGS
-  --json  Print a json output
-  --yaml  Print a yaml output
-
-DESCRIPTION
-  Get tickets statistic
-```
-
-## `emmacli company users ID`
-
-Get user
-
-```
-USAGE
-  $ emmacli company users [ID] [--json] [--yaml]
-
-ARGUMENTS
-  ID  Id of requested user
-
-FLAGS
-  --json  Print a json output
-  --yaml  Print a yaml output
-
-DESCRIPTION
-  Get user
 ```
 
 ## `emmacli products`
@@ -819,6 +453,62 @@ DESCRIPTION
   Get ssh keys in company
 ```
 
+## `emmacli products commons ssh create`
+
+Create ssh key in company
+
+```
+USAGE
+  $ emmacli products commons ssh create --name <value> --publicKey <value> [--json] [--yaml]
+
+FLAGS
+  --json               Print a json output
+  --name=<value>       (required) Ssh name
+  --publicKey=<value>  (required) Ssh public key
+  --yaml               Print a yaml output
+
+DESCRIPTION
+  Create ssh key in company
+```
+
+## `emmacli products commons ssh delete ID`
+
+Delete ssh key in company
+
+```
+USAGE
+  $ emmacli products commons ssh delete [ID] [--json] [--yaml]
+
+ARGUMENTS
+  ID  Id of ssh key
+
+FLAGS
+  --json  Print a json output
+  --yaml  Print a yaml output
+
+DESCRIPTION
+  Delete ssh key in company
+```
+
+## `emmacli products commons ssh generate`
+
+Generate ssh key in company
+
+```
+USAGE
+  $ emmacli products commons ssh generate --keyName <value> --host <value> --userName <value> [--json] [--yaml]
+
+FLAGS
+  --host=<value>      (required) Ssh host name
+  --json              Print a json output
+  --keyName=<value>   (required) Ssh key name
+  --userName=<value>  (required) Ssh user name
+  --yaml              Print a yaml output
+
+DESCRIPTION
+  Generate ssh key in company
+```
+
 ## `emmacli products commons templates [ID]`
 
 Get list of templates
@@ -923,6 +613,41 @@ FLAGS
 
 DESCRIPTION
   Get list of spot wizard tuples
+```
+
+## `emmacli products limits`
+
+Get company rate limit state
+
+```
+USAGE
+  $ emmacli products limits [--json] [--yaml]
+
+FLAGS
+  --json  Print a json output
+  --yaml  Print a yaml output
+
+DESCRIPTION
+  Get company rate limit state
+```
+
+## `emmacli products limits exceed-history`
+
+Get current project payable requests count
+
+```
+USAGE
+  $ emmacli products limits exceed-history --startPeriodUnixTimestamp <value> --endPeriodUnixTimestamp <value> [--json]
+  [--yaml]
+
+FLAGS
+  --endPeriodUnixTimestamp=<value>    (required) End period for limits search (in unix timestamp)
+  --json                              Print a json output
+  --startPeriodUnixTimestamp=<value>  (required) Start period for limits search (in unix timestamp)
+  --yaml                              Print a yaml output
+
+DESCRIPTION
+  Get current project payable requests count
 ```
 
 ## `emmacli products networks security-groups`
