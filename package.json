@@ -1,7 +1,7 @@
 {
   "name": "emmacli",
   "description": "Command line interface to manage emma entities",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "Emma",
   "bin": {
     "emmacli": "bin/run"

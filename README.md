@@ -16,7 +16,7 @@ $ npm install -g emmacli
 $ emmacli COMMAND
 running command...
 $ emmacli (--version)
-emmacli/0.0.4 linux-x64 node-v12.22.9
+emmacli/0.0.5 linux-x64 node-v12.22.9
 $ emmacli --help [COMMAND]
 USAGE
   $ emmacli COMMAND
@@ -25,56 +25,180 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
+* [`emmacli api limits`](#emmacli-api-limits)
+* [`emmacli api limits exceed-history`](#emmacli-api-limits-exceed-history)
+* [`emmacli applications [ID]`](#emmacli-applications-id)
+* [`emmacli applications create`](#emmacli-applications-create)
+* [`emmacli applications delete`](#emmacli-applications-delete)
+* [`emmacli applications descriptions`](#emmacli-applications-descriptions)
+* [`emmacli applications schema`](#emmacli-applications-schema)
 * [`emmacli auth info`](#emmacli-auth-info)
 * [`emmacli auth login`](#emmacli-auth-login)
 * [`emmacli auth logout`](#emmacli-auth-logout)
+* [`emmacli clusters [ID]`](#emmacli-clusters-id)
+* [`emmacli clusters create`](#emmacli-clusters-create)
+* [`emmacli clusters schema`](#emmacli-clusters-schema)
+* [`emmacli commons available-providers ID`](#emmacli-commons-available-providers-id)
+* [`emmacli commons bundles [ID]`](#emmacli-commons-bundles-id)
+* [`emmacli commons descriptions`](#emmacli-commons-descriptions)
+* [`emmacli commons locations [ID]`](#emmacli-commons-locations-id)
+* [`emmacli commons presets [ID]`](#emmacli-commons-presets-id)
+* [`emmacli commons projects [ID]`](#emmacli-commons-projects-id)
+* [`emmacli commons providers [ID]`](#emmacli-commons-providers-id)
+* [`emmacli commons ssh`](#emmacli-commons-ssh)
+* [`emmacli commons ssh create`](#emmacli-commons-ssh-create)
+* [`emmacli commons ssh delete ID`](#emmacli-commons-ssh-delete-id)
+* [`emmacli commons ssh generate`](#emmacli-commons-ssh-generate)
+* [`emmacli commons templates [ID]`](#emmacli-commons-templates-id)
+* [`emmacli commons vms ID`](#emmacli-commons-vms-id)
+* [`emmacli commons wizard-tuples`](#emmacli-commons-wizard-tuples)
+* [`emmacli commons wizard-tuples-advanced`](#emmacli-commons-wizard-tuples-advanced)
+* [`emmacli commons wizard-tuples-spot`](#emmacli-commons-wizard-tuples-spot)
+* [`emmacli networks security-groups`](#emmacli-networks-security-groups)
+* [`emmacli networks security-groups add-rule`](#emmacli-networks-security-groups-add-rule)
+* [`emmacli networks security-groups update`](#emmacli-networks-security-groups-update)
 * [`emmacli products`](#emmacli-products)
-* [`emmacli products applications [ID]`](#emmacli-products-applications-id)
-* [`emmacli products applications create`](#emmacli-products-applications-create)
-* [`emmacli products applications delete`](#emmacli-products-applications-delete)
-* [`emmacli products applications descriptions`](#emmacli-products-applications-descriptions)
-* [`emmacli products applications schema`](#emmacli-products-applications-schema)
-* [`emmacli products clusters [ID]`](#emmacli-products-clusters-id)
-* [`emmacli products clusters create`](#emmacli-products-clusters-create)
-* [`emmacli products clusters schema`](#emmacli-products-clusters-schema)
-* [`emmacli products commons available-providers ID`](#emmacli-products-commons-available-providers-id)
-* [`emmacli products commons bundles [ID]`](#emmacli-products-commons-bundles-id)
-* [`emmacli products commons descriptions`](#emmacli-products-commons-descriptions)
-* [`emmacli products commons locations [ID]`](#emmacli-products-commons-locations-id)
-* [`emmacli products commons presets [ID]`](#emmacli-products-commons-presets-id)
-* [`emmacli products commons projects [ID]`](#emmacli-products-commons-projects-id)
-* [`emmacli products commons providers [ID]`](#emmacli-products-commons-providers-id)
-* [`emmacli products commons ssh`](#emmacli-products-commons-ssh)
-* [`emmacli products commons ssh create`](#emmacli-products-commons-ssh-create)
-* [`emmacli products commons ssh delete ID`](#emmacli-products-commons-ssh-delete-id)
-* [`emmacli products commons ssh generate`](#emmacli-products-commons-ssh-generate)
-* [`emmacli products commons templates [ID]`](#emmacli-products-commons-templates-id)
-* [`emmacli products commons vms ID`](#emmacli-products-commons-vms-id)
-* [`emmacli products commons wizard-tuples`](#emmacli-products-commons-wizard-tuples)
-* [`emmacli products commons wizard-tuples-advanced`](#emmacli-products-commons-wizard-tuples-advanced)
-* [`emmacli products commons wizard-tuples-spot`](#emmacli-products-commons-wizard-tuples-spot)
-* [`emmacli products limits`](#emmacli-products-limits)
-* [`emmacli products limits exceed-history`](#emmacli-products-limits-exceed-history)
-* [`emmacli products networks security-groups`](#emmacli-products-networks-security-groups)
-* [`emmacli products networks security-groups add-rule`](#emmacli-products-networks-security-groups-add-rule)
-* [`emmacli products networks security-groups update`](#emmacli-products-networks-security-groups-update)
-* [`emmacli products spots`](#emmacli-products-spots)
-* [`emmacli products spots check-spot-price`](#emmacli-products-spots-check-spot-price)
-* [`emmacli products spots create`](#emmacli-products-spots-create)
-* [`emmacli products spots delete`](#emmacli-products-spots-delete)
-* [`emmacli products spots reboot`](#emmacli-products-spots-reboot)
-* [`emmacli products spots shutdown`](#emmacli-products-spots-shutdown)
-* [`emmacli products spots snapshot`](#emmacli-products-spots-snapshot)
-* [`emmacli products spots start`](#emmacli-products-spots-start)
-* [`emmacli products vms`](#emmacli-products-vms)
-* [`emmacli products vms clone`](#emmacli-products-vms-clone)
-* [`emmacli products vms create`](#emmacli-products-vms-create)
-* [`emmacli products vms delete`](#emmacli-products-vms-delete)
-* [`emmacli products vms reboot`](#emmacli-products-vms-reboot)
-* [`emmacli products vms shutdown`](#emmacli-products-vms-shutdown)
-* [`emmacli products vms snapshot`](#emmacli-products-vms-snapshot)
-* [`emmacli products vms start`](#emmacli-products-vms-start)
-* [`emmacli products vms transfer`](#emmacli-products-vms-transfer)
+* [`emmacli spots`](#emmacli-spots)
+* [`emmacli spots check-spot-price`](#emmacli-spots-check-spot-price)
+* [`emmacli spots create`](#emmacli-spots-create)
+* [`emmacli spots delete`](#emmacli-spots-delete)
+* [`emmacli spots reboot`](#emmacli-spots-reboot)
+* [`emmacli spots shutdown`](#emmacli-spots-shutdown)
+* [`emmacli spots snapshot`](#emmacli-spots-snapshot)
+* [`emmacli spots start`](#emmacli-spots-start)
+* [`emmacli vms`](#emmacli-vms)
+* [`emmacli vms clone`](#emmacli-vms-clone)
+* [`emmacli vms create`](#emmacli-vms-create)
+* [`emmacli vms delete`](#emmacli-vms-delete)
+* [`emmacli vms reboot`](#emmacli-vms-reboot)
+* [`emmacli vms shutdown`](#emmacli-vms-shutdown)
+* [`emmacli vms snapshot`](#emmacli-vms-snapshot)
+* [`emmacli vms start`](#emmacli-vms-start)
+* [`emmacli vms transfer`](#emmacli-vms-transfer)
+
+## `emmacli api limits`
+
+Get company API limits information
+
+```
+USAGE
+  $ emmacli api limits [--json] [--yaml]
+
+FLAGS
+  --json  Print a json output
+  --yaml  Print a yaml output
+
+DESCRIPTION
+  Get company API limits information
+```
+
+## `emmacli api limits exceed-history`
+
+Get current project API payable requests count
+
+```
+USAGE
+  $ emmacli api limits exceed-history --startPeriodUnixTimestamp <value> --endPeriodUnixTimestamp <value> [--json]
+  [--yaml]
+
+FLAGS
+  --endPeriodUnixTimestamp=<value>    (required) End period for limits search (in unix timestamp)
+  --json                              Print a json output
+  --startPeriodUnixTimestamp=<value>  (required) Start period for limits search (in unix timestamp)
+  --yaml                              Print a yaml output
+
+DESCRIPTION
+  Get current project API payable requests count
+```
+
+## `emmacli applications [ID]`
+
+Get list of current project applications
+
+```
+USAGE
+  $ emmacli applications [ID] [--json] [--yaml]
+
+ARGUMENTS
+  ID  Id of requested product
+
+FLAGS
+  --json  Print a json output
+  --yaml  Print a yaml output
+
+DESCRIPTION
+  Get list of current project applications
+```
+
+_See code: [src/commands//applications/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.5/src/commands//applications/index.ts)_
+
+## `emmacli applications create`
+
+Create application by configuration schema
+
+```
+USAGE
+  $ emmacli applications create [--json] [--yaml] [--configFile <value>] [--config <value>]
+
+FLAGS
+  --config=<value>      Config schema
+  --configFile=<value>  Config file location
+  --json                Print a json output
+  --yaml                Print a yaml output
+
+DESCRIPTION
+  Create application by configuration schema
+```
+
+## `emmacli applications delete`
+
+Delete application
+
+```
+USAGE
+  $ emmacli applications delete --productId <value> [--json] [--yaml]
+
+FLAGS
+  --json               Print a json output
+  --productId=<value>  (required) Product id of application
+  --yaml               Print a yaml output
+
+DESCRIPTION
+  Delete application
+```
+
+## `emmacli applications descriptions`
+
+Get list of full application descriptions
+
+```
+USAGE
+  $ emmacli applications descriptions [--json] [--yaml]
+
+FLAGS
+  --json  Print a json output
+  --yaml  Print a yaml output
+
+DESCRIPTION
+  Get list of full application descriptions
+```
+
+## `emmacli applications schema`
+
+Get application configuration schema
+
+```
+USAGE
+  $ emmacli applications schema --applicationId <value> [--json] [--yaml]
+
+FLAGS
+  --applicationId=<value>  (required) Application id
+  --json                   Print a json output
+  --yaml                   Print a yaml output
+
+DESCRIPTION
+  Get application configuration schema
+```
 
 ## `emmacli auth info`
 
@@ -122,31 +246,13 @@ DESCRIPTION
   Log out from emma platform
 ```
 
-## `emmacli products`
+## `emmacli clusters [ID]`
 
-Get list of current project products
-
-```
-USAGE
-  $ emmacli products [--json] [--yaml]
-
-FLAGS
-  --json  Print a json output
-  --yaml  Print a yaml output
-
-DESCRIPTION
-  Get list of current project products
-```
-
-_See code: [src/commands/products/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.4/src/commands/products/index.ts)_
-
-## `emmacli products applications [ID]`
-
-Get list of current company applications
+Get list of current project k8s clusters
 
 ```
 USAGE
-  $ emmacli products applications [ID] [--json] [--yaml]
+  $ emmacli clusters [ID] [--json] [--yaml]
 
 ARGUMENTS
   ID  Id of requested product
@@ -156,103 +262,18 @@ FLAGS
   --yaml  Print a yaml output
 
 DESCRIPTION
-  Get list of current company applications
+  Get list of current project k8s clusters
 ```
 
-## `emmacli products applications create`
+_See code: [src/commands//clusters/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.5/src/commands//clusters/index.ts)_
 
-Create application by configuration schema
-
-```
-USAGE
-  $ emmacli products applications create [--json] [--yaml] [--configFile <value>] [--config <value>]
-
-FLAGS
-  --config=<value>      Config schema
-  --configFile=<value>  Config file location
-  --json                Print a json output
-  --yaml                Print a yaml output
-
-DESCRIPTION
-  Create application by configuration schema
-```
-
-## `emmacli products applications delete`
-
-Delete application
-
-```
-USAGE
-  $ emmacli products applications delete --productId <value> [--json] [--yaml]
-
-FLAGS
-  --json               Print a json output
-  --productId=<value>  (required) Product id of application
-  --yaml               Print a yaml output
-
-DESCRIPTION
-  Delete application
-```
-
-## `emmacli products applications descriptions`
-
-Get list of full application descriptions
-
-```
-USAGE
-  $ emmacli products applications descriptions [--json] [--yaml]
-
-FLAGS
-  --json  Print a json output
-  --yaml  Print a yaml output
-
-DESCRIPTION
-  Get list of full application descriptions
-```
-
-## `emmacli products applications schema`
-
-Get application configuration schema
-
-```
-USAGE
-  $ emmacli products applications schema --applicationId <value> [--json] [--yaml]
-
-FLAGS
-  --applicationId=<value>  (required) Application id
-  --json                   Print a json output
-  --yaml                   Print a yaml output
-
-DESCRIPTION
-  Get application configuration schema
-```
-
-## `emmacli products clusters [ID]`
-
-Get list of current company k8s clusters
-
-```
-USAGE
-  $ emmacli products clusters [ID] [--json] [--yaml]
-
-ARGUMENTS
-  ID  Id of requested product
-
-FLAGS
-  --json  Print a json output
-  --yaml  Print a yaml output
-
-DESCRIPTION
-  Get list of current company k8s clusters
-```
-
-## `emmacli products clusters create`
+## `emmacli clusters create`
 
 Create cluster by configuration schema
 
 ```
 USAGE
-  $ emmacli products clusters create [--json] [--yaml] [--configFile <value>] [--config <value>]
+  $ emmacli clusters create [--json] [--yaml] [--configFile <value>] [--config <value>]
 
 FLAGS
   --config=<value>      Config schema
@@ -264,13 +285,13 @@ DESCRIPTION
   Create cluster by configuration schema
 ```
 
-## `emmacli products clusters schema`
+## `emmacli clusters schema`
 
 Get cluster configuration schema
 
 ```
 USAGE
-  $ emmacli products clusters schema --applicationId <value> [--json] [--yaml]
+  $ emmacli clusters schema --applicationId <value> [--json] [--yaml]
 
 FLAGS
   --applicationId=<value>  (required) Application id
@@ -281,13 +302,13 @@ DESCRIPTION
   Get cluster configuration schema
 ```
 
-## `emmacli products commons available-providers ID`
+## `emmacli commons available-providers ID`
 
 Get list of providers available for transfer a vm
 
 ```
 USAGE
-  $ emmacli products commons available-providers [ID] [--json] [--yaml] [--itemCount <value>]
+  $ emmacli commons available-providers [ID] [--json] [--yaml] [--itemCount <value>]
 
 ARGUMENTS
   ID  Id of transferring vm
@@ -301,13 +322,13 @@ DESCRIPTION
   Get list of providers available for transfer a vm
 ```
 
-## `emmacli products commons bundles [ID]`
+## `emmacli commons bundles [ID]`
 
 Get list of bundles
 
 ```
 USAGE
-  $ emmacli products commons bundles [ID] [--json] [--yaml] [--pageNumber <value>] [--itemCount <value>] [--sortBy <value>]
+  $ emmacli commons bundles [ID] [--json] [--yaml] [--pageNumber <value>] [--itemCount <value>] [--sortBy <value>]
     [--order <value>]
 
 ARGUMENTS
@@ -325,29 +346,29 @@ DESCRIPTION
   Get list of bundles
 ```
 
-## `emmacli products commons descriptions`
+## `emmacli commons descriptions`
 
-Get list of current company products descriptions
+Get list of products descriptions
 
 ```
 USAGE
-  $ emmacli products commons descriptions [--json] [--yaml]
+  $ emmacli commons descriptions [--json] [--yaml]
 
 FLAGS
   --json  Print a json output
   --yaml  Print a yaml output
 
 DESCRIPTION
-  Get list of current company products descriptions
+  Get list of products descriptions
 ```
 
-## `emmacli products commons locations [ID]`
+## `emmacli commons locations [ID]`
 
 Get list of locations
 
 ```
 USAGE
-  $ emmacli products commons locations [ID] [--json] [--yaml] [--pageNumber <value>] [--itemCount <value>] [--sortBy <value>]
+  $ emmacli commons locations [ID] [--json] [--yaml] [--pageNumber <value>] [--itemCount <value>] [--sortBy <value>]
     [--order <value>]
 
 ARGUMENTS
@@ -365,13 +386,13 @@ DESCRIPTION
   Get list of locations
 ```
 
-## `emmacli products commons presets [ID]`
+## `emmacli commons presets [ID]`
 
 Get list of presets
 
 ```
 USAGE
-  $ emmacli products commons presets [ID] [--json] [--yaml] [--pageNumber <value>] [--itemCount <value>] [--sortBy <value>]
+  $ emmacli commons presets [ID] [--json] [--yaml] [--pageNumber <value>] [--itemCount <value>] [--sortBy <value>]
     [--order <value>]
 
 ARGUMENTS
@@ -389,13 +410,13 @@ DESCRIPTION
   Get list of presets
 ```
 
-## `emmacli products commons projects [ID]`
+## `emmacli commons projects [ID]`
 
 Get list of projects
 
 ```
 USAGE
-  $ emmacli products commons projects [ID] [--json] [--yaml] [--pageNumber <value>] [--itemCount <value>] [--sortBy <value>]
+  $ emmacli commons projects [ID] [--json] [--yaml] [--pageNumber <value>] [--itemCount <value>] [--sortBy <value>]
     [--order <value>]
 
 ARGUMENTS
@@ -413,13 +434,13 @@ DESCRIPTION
   Get list of projects
 ```
 
-## `emmacli products commons providers [ID]`
+## `emmacli commons providers [ID]`
 
 Get list of providers
 
 ```
 USAGE
-  $ emmacli products commons providers [ID] [--json] [--yaml] [--pageNumber <value>] [--itemCount <value>] [--sortBy <value>]
+  $ emmacli commons providers [ID] [--json] [--yaml] [--pageNumber <value>] [--itemCount <value>] [--sortBy <value>]
     [--order <value>]
 
 ARGUMENTS
@@ -437,13 +458,13 @@ DESCRIPTION
   Get list of providers
 ```
 
-## `emmacli products commons ssh`
+## `emmacli commons ssh`
 
 Get ssh keys in company
 
 ```
 USAGE
-  $ emmacli products commons ssh [--json] [--yaml]
+  $ emmacli commons ssh [--json] [--yaml]
 
 FLAGS
   --json  Print a json output
@@ -453,13 +474,13 @@ DESCRIPTION
   Get ssh keys in company
 ```
 
-## `emmacli products commons ssh create`
+## `emmacli commons ssh create`
 
 Create ssh key in company
 
 ```
 USAGE
-  $ emmacli products commons ssh create --name <value> --publicKey <value> [--json] [--yaml]
+  $ emmacli commons ssh create --name <value> --publicKey <value> [--json] [--yaml]
 
 FLAGS
   --json               Print a json output
@@ -471,13 +492,13 @@ DESCRIPTION
   Create ssh key in company
 ```
 
-## `emmacli products commons ssh delete ID`
+## `emmacli commons ssh delete ID`
 
 Delete ssh key in company
 
 ```
 USAGE
-  $ emmacli products commons ssh delete [ID] [--json] [--yaml]
+  $ emmacli commons ssh delete [ID] [--json] [--yaml]
 
 ARGUMENTS
   ID  Id of ssh key
@@ -490,13 +511,13 @@ DESCRIPTION
   Delete ssh key in company
 ```
 
-## `emmacli products commons ssh generate`
+## `emmacli commons ssh generate`
 
 Generate ssh key in company
 
 ```
 USAGE
-  $ emmacli products commons ssh generate --keyName <value> --host <value> --userName <value> [--json] [--yaml]
+  $ emmacli commons ssh generate --keyName <value> --host <value> --userName <value> [--json] [--yaml]
 
 FLAGS
   --host=<value>      (required) Ssh host name
@@ -509,13 +530,13 @@ DESCRIPTION
   Generate ssh key in company
 ```
 
-## `emmacli products commons templates [ID]`
+## `emmacli commons templates [ID]`
 
 Get list of templates
 
 ```
 USAGE
-  $ emmacli products commons templates [ID] [--json] [--yaml] [--pageNumber <value>] [--itemCount <value>] [--sortBy <value>]
+  $ emmacli commons templates [ID] [--json] [--yaml] [--pageNumber <value>] [--itemCount <value>] [--sortBy <value>]
     [--order <value>]
 
 ARGUMENTS
@@ -533,13 +554,13 @@ DESCRIPTION
   Get list of templates
 ```
 
-## `emmacli products commons vms ID`
+## `emmacli commons vms ID`
 
 Get vm details
 
 ```
 USAGE
-  $ emmacli products commons vms [ID] [--json] [--yaml]
+  $ emmacli commons vms [ID] [--json] [--yaml]
 
 ARGUMENTS
   ID  Id of requested vm
@@ -552,13 +573,13 @@ DESCRIPTION
   Get vm details
 ```
 
-## `emmacli products commons wizard-tuples`
+## `emmacli commons wizard-tuples`
 
 Get list of wizard tuples
 
 ```
 USAGE
-  $ emmacli products commons wizard-tuples [--json] [--yaml]
+  $ emmacli commons wizard-tuples [--json] [--yaml]
 
 FLAGS
   --json  Print a json output
@@ -568,13 +589,13 @@ DESCRIPTION
   Get list of wizard tuples
 ```
 
-## `emmacli products commons wizard-tuples-advanced`
+## `emmacli commons wizard-tuples-advanced`
 
 Get list of spot wizard tuples
 
 ```
 USAGE
-  $ emmacli products commons wizard-tuples-advanced [--json] [--yaml] [--osFamily <value>] [--osType <value>] [--osVersion <value>]
+  $ emmacli commons wizard-tuples-advanced [--json] [--yaml] [--osFamily <value>] [--osType <value>] [--osVersion <value>]
     [--locationsIds <value>] [--providers <value>] [--dcIds <value>] [--minCpu <value>] [--maxCpu <value>] [--minRam
     <value>] [--maxRam <value>] [--minStorage <value>] [--maxStorage <value>]
 
@@ -598,13 +619,13 @@ DESCRIPTION
   Get list of spot wizard tuples
 ```
 
-## `emmacli products commons wizard-tuples-spot`
+## `emmacli commons wizard-tuples-spot`
 
 Get list of spot wizard tuples
 
 ```
 USAGE
-  $ emmacli products commons wizard-tuples-spot [--json] [--yaml] [--itemCount <value>]
+  $ emmacli commons wizard-tuples-spot [--json] [--yaml] [--itemCount <value>]
 
 FLAGS
   --itemCount=<value>  Return items count default 10000
@@ -615,64 +636,29 @@ DESCRIPTION
   Get list of spot wizard tuples
 ```
 
-## `emmacli products limits`
+## `emmacli networks security-groups`
 
-Get company rate limit state
+Get list of current project security groups
 
 ```
 USAGE
-  $ emmacli products limits [--json] [--yaml]
+  $ emmacli networks security-groups [--json] [--yaml]
 
 FLAGS
   --json  Print a json output
   --yaml  Print a yaml output
 
 DESCRIPTION
-  Get company rate limit state
+  Get list of current project security groups
 ```
 
-## `emmacli products limits exceed-history`
-
-Get current project payable requests count
-
-```
-USAGE
-  $ emmacli products limits exceed-history --startPeriodUnixTimestamp <value> --endPeriodUnixTimestamp <value> [--json]
-  [--yaml]
-
-FLAGS
-  --endPeriodUnixTimestamp=<value>    (required) End period for limits search (in unix timestamp)
-  --json                              Print a json output
-  --startPeriodUnixTimestamp=<value>  (required) Start period for limits search (in unix timestamp)
-  --yaml                              Print a yaml output
-
-DESCRIPTION
-  Get current project payable requests count
-```
-
-## `emmacli products networks security-groups`
-
-Get list of current company security groups
-
-```
-USAGE
-  $ emmacli products networks security-groups [--json] [--yaml]
-
-FLAGS
-  --json  Print a json output
-  --yaml  Print a yaml output
-
-DESCRIPTION
-  Get list of current company security groups
-```
-
-## `emmacli products networks security-groups add-rule`
+## `emmacli networks security-groups add-rule`
 
 Add rules to security groups
 
 ```
 USAGE
-  $ emmacli products networks security-groups add-rule --securityGroupsId <value> --policy ALLOW|DENY --direction INBOUND|OUTBOUND --protocol
+  $ emmacli networks security-groups add-rule --securityGroupsId <value> --policy ALLOW|DENY --direction INBOUND|OUTBOUND --protocol
     all|TCP|UDP|ICMP|GRE|ESP|AH|SCTP|IPIP --ports <value> --ipRange <value> [--json] [--yaml] [--description <value>]
 
 FLAGS
@@ -690,13 +676,13 @@ DESCRIPTION
   Add rules to security groups
 ```
 
-## `emmacli products networks security-groups update`
+## `emmacli networks security-groups update`
 
 Update security groups rules
 
 ```
 USAGE
-  $ emmacli products networks security-groups update --securityGroupsId <value> --direction INBOUND|OUTBOUND [--json] [--yaml] [--configFile
+  $ emmacli networks security-groups update --securityGroupsId <value> --direction INBOUND|OUTBOUND [--json] [--yaml] [--configFile
     <value>] [--config <value>]
 
 FLAGS
@@ -711,29 +697,49 @@ DESCRIPTION
   Update security groups rules
 ```
 
-## `emmacli products spots`
+## `emmacli products`
 
-Get list of current company spot vms
+Get list of current project products
 
 ```
 USAGE
-  $ emmacli products spots [--json] [--yaml]
+  $ emmacli products [--json] [--yaml]
 
 FLAGS
   --json  Print a json output
   --yaml  Print a yaml output
 
 DESCRIPTION
-  Get list of current company spot vms
+  Get list of current project products
 ```
 
-## `emmacli products spots check-spot-price`
+_See code: [src/commands//products/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.5/src/commands//products/index.ts)_
+
+## `emmacli spots`
+
+Get list of current project spot vms
+
+```
+USAGE
+  $ emmacli spots [--json] [--yaml]
+
+FLAGS
+  --json  Print a json output
+  --yaml  Print a yaml output
+
+DESCRIPTION
+  Get list of current project spot vms
+```
+
+_See code: [src/commands//spots/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.5/src/commands//spots/index.ts)_
+
+## `emmacli spots check-spot-price`
 
 Check spot price
 
 ```
 USAGE
-  $ emmacli products spots check-spot-price --providerId <value> --bundleId <value> --dcId <value> --templateId <value> [--json]
+  $ emmacli spots check-spot-price --providerId <value> --bundleId <value> --dcId <value> --templateId <value> [--json]
     [--yaml]
 
 FLAGS
@@ -748,13 +754,13 @@ DESCRIPTION
   Check spot price
 ```
 
-## `emmacli products spots create`
+## `emmacli spots create`
 
 Create spot
 
 ```
 USAGE
-  $ emmacli products spots create --providerId <value> --locationId <value> --bundleId <value> --cloudType <value>
+  $ emmacli spots create --providerId <value> --locationId <value> --bundleId <value> --cloudType <value>
     --templateId <value> --dcId <value> --sshId <value> --cloudNetworkType <value> --username <value> --hostname <value>
     [--json] [--yaml]
 
@@ -776,13 +782,13 @@ DESCRIPTION
   Create spot
 ```
 
-## `emmacli products spots delete`
+## `emmacli spots delete`
 
 Delete spot
 
 ```
 USAGE
-  $ emmacli products spots delete --productId <value> [--json] [--yaml]
+  $ emmacli spots delete --productId <value> [--json] [--yaml]
 
 FLAGS
   --json               Print a json output
@@ -793,13 +799,13 @@ DESCRIPTION
   Delete spot
 ```
 
-## `emmacli products spots reboot`
+## `emmacli spots reboot`
 
 Reboot spot
 
 ```
 USAGE
-  $ emmacli products spots reboot --productId <value> [--json] [--yaml]
+  $ emmacli spots reboot --productId <value> [--json] [--yaml]
 
 FLAGS
   --json               Print a json output
@@ -810,13 +816,13 @@ DESCRIPTION
   Reboot spot
 ```
 
-## `emmacli products spots shutdown`
+## `emmacli spots shutdown`
 
 Shutdown spot
 
 ```
 USAGE
-  $ emmacli products spots shutdown --productId <value> [--json] [--yaml]
+  $ emmacli spots shutdown --productId <value> [--json] [--yaml]
 
 FLAGS
   --json               Print a json output
@@ -827,13 +833,13 @@ DESCRIPTION
   Shutdown spot
 ```
 
-## `emmacli products spots snapshot`
+## `emmacli spots snapshot`
 
 Create spot snapshot
 
 ```
 USAGE
-  $ emmacli products spots snapshot --productId <value> [--json] [--yaml]
+  $ emmacli spots snapshot --productId <value> [--json] [--yaml]
 
 FLAGS
   --json               Print a json output
@@ -844,13 +850,13 @@ DESCRIPTION
   Create spot snapshot
 ```
 
-## `emmacli products spots start`
+## `emmacli spots start`
 
 Start spot
 
 ```
 USAGE
-  $ emmacli products spots start --productId <value> [--json] [--yaml]
+  $ emmacli spots start --productId <value> [--json] [--yaml]
 
 FLAGS
   --json               Print a json output
@@ -861,29 +867,31 @@ DESCRIPTION
   Start spot
 ```
 
-## `emmacli products vms`
+## `emmacli vms`
 
-Get list of current company vms (vm, spot, private vms)
+Get list of current project vms (vm, spot, private vms)
 
 ```
 USAGE
-  $ emmacli products vms [--json] [--yaml]
+  $ emmacli vms [--json] [--yaml]
 
 FLAGS
   --json  Print a json output
   --yaml  Print a yaml output
 
 DESCRIPTION
-  Get list of current company vms (vm, spot, private vms)
+  Get list of current project vms (vm, spot, private vms)
 ```
 
-## `emmacli products vms clone`
+_See code: [src/commands//vms/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.5/src/commands//vms/index.ts)_
+
+## `emmacli vms clone`
 
 Clone vm
 
 ```
 USAGE
-  $ emmacli products vms clone --productId <value> --newVmName <value> [--json] [--yaml]
+  $ emmacli vms clone --productId <value> --newVmName <value> [--json] [--yaml]
 
 FLAGS
   --json               Print a json output
@@ -895,13 +903,13 @@ DESCRIPTION
   Clone vm
 ```
 
-## `emmacli products vms create`
+## `emmacli vms create`
 
 Create vm
 
 ```
 USAGE
-  $ emmacli products vms create --providerId <value> --locationId <value> --bundleId <value> --cloudType <value>
+  $ emmacli vms create --providerId <value> --locationId <value> --bundleId <value> --cloudType <value>
     --templateId <value> --dcId <value> --sshId <value> --cloudNetworkType <value> --username <value> --hostname <value>
     [--json] [--yaml]
 
@@ -923,13 +931,13 @@ DESCRIPTION
   Create vm
 ```
 
-## `emmacli products vms delete`
+## `emmacli vms delete`
 
 Delete vm
 
 ```
 USAGE
-  $ emmacli products vms delete --productId <value> [--json] [--yaml]
+  $ emmacli vms delete --productId <value> [--json] [--yaml]
 
 FLAGS
   --json               Print a json output
@@ -940,13 +948,13 @@ DESCRIPTION
   Delete vm
 ```
 
-## `emmacli products vms reboot`
+## `emmacli vms reboot`
 
 Reboot vm
 
 ```
 USAGE
-  $ emmacli products vms reboot --productId <value> [--json] [--yaml]
+  $ emmacli vms reboot --productId <value> [--json] [--yaml]
 
 FLAGS
   --json               Print a json output
@@ -957,13 +965,13 @@ DESCRIPTION
   Reboot vm
 ```
 
-## `emmacli products vms shutdown`
+## `emmacli vms shutdown`
 
 Shutdown vm
 
 ```
 USAGE
-  $ emmacli products vms shutdown --productId <value> [--json] [--yaml]
+  $ emmacli vms shutdown --productId <value> [--json] [--yaml]
 
 FLAGS
   --json               Print a json output
@@ -974,13 +982,13 @@ DESCRIPTION
   Shutdown vm
 ```
 
-## `emmacli products vms snapshot`
+## `emmacli vms snapshot`
 
 Create vm snapshot
 
 ```
 USAGE
-  $ emmacli products vms snapshot --productId <value> [--json] [--yaml]
+  $ emmacli vms snapshot --productId <value> [--json] [--yaml]
 
 FLAGS
   --json               Print a json output
@@ -991,13 +999,13 @@ DESCRIPTION
   Create vm snapshot
 ```
 
-## `emmacli products vms start`
+## `emmacli vms start`
 
 Start vm
 
 ```
 USAGE
-  $ emmacli products vms start --productId <value> [--json] [--yaml]
+  $ emmacli vms start --productId <value> [--json] [--yaml]
 
 FLAGS
   --json               Print a json output
@@ -1008,13 +1016,13 @@ DESCRIPTION
   Start vm
 ```
 
-## `emmacli products vms transfer`
+## `emmacli vms transfer`
 
 Transfer vm
 
 ```
 USAGE
-  $ emmacli products vms transfer --productId <value> --dcId <value> --providerId <value> --cloudType <value> [--json]
+  $ emmacli vms transfer --productId <value> --dcId <value> --providerId <value> --cloudType <value> [--json]
     [--yaml] [--doNotDeleteSource]
 
 FLAGS
