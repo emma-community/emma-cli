@@ -6,7 +6,7 @@
   "bin": {
     "emmacli": "bin/run"
   },
-  "bugs": "https://github.com/MandarinSolutions/emma-cli/issues",
+  "bugs": "https://github.com/emma-community/emma-cli/issues",
   "dependencies": {
     "@oclif/core": "^1",
     "@oclif/plugin-help": "^5",
@@ -44,7 +44,7 @@
     "/npm-shrinkwrap.json",
     "/oclif.manifest.json"
   ],
-  "homepage": "https://github.com/MandarinSolutions/emma-cli",
+  "homepage": "https://github.com/emma-community/emma-cli",
   "keywords": [
     "cli",
     "emma",
@@ -74,7 +74,7 @@
       "products": { "description": "List products" }
     }
   },
-  "repository": "MandarinSolutions/emma-cli",
+  "repository": "emma-community/emma-cli",
   "scripts": {
     "build": "shx rm -rf dist && tsc -b",
     "lint": "eslint src/** --ext .ts --config .eslintrc",

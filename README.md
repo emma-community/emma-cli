@@ -130,7 +130,7 @@ DESCRIPTION
   Get list of current project applications
 ```
 
-_See code: [src/commands//applications/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.5/src/commands//applications/index.ts)_
+_See code: [src/commands//applications/index.ts](https://github.com/emma-community/emma-cli/blob/v0.0.5/src/commands//applications/index.ts)_
 
 ## `emmacli applications create`
 
@@ -265,7 +265,7 @@ DESCRIPTION
   Get list of current project k8s clusters
 ```
 
-_See code: [src/commands//clusters/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.5/src/commands//clusters/index.ts)_
+_See code: [src/commands//clusters/index.ts](https://github.com/emma-community/emma-cli/blob/v0.0.5/src/commands//clusters/index.ts)_
 
 ## `emmacli clusters create`
 
@@ -713,7 +713,7 @@ DESCRIPTION
   Get list of current project products
 ```
 
-_See code: [src/commands//products/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.5/src/commands//products/index.ts)_
+_See code: [src/commands//products/index.ts](https://github.com/emma-community/emma-cli/blob/v0.0.5/src/commands//products/index.ts)_
 
 ## `emmacli spots`
 
@@ -731,7 +731,7 @@ DESCRIPTION
   Get list of current project spot vms
 ```
 
-_See code: [src/commands//spots/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.5/src/commands//spots/index.ts)_
+_See code: [src/commands//spots/index.ts](https://github.com/emma-community/emma-cli/blob/v0.0.5/src/commands//spots/index.ts)_
 
 ## `emmacli spots check-spot-price`
 
@@ -883,7 +883,7 @@ DESCRIPTION
   Get list of current project vms (vm, spot, private vms)
 ```
 
-_See code: [src/commands//vms/index.ts](https://github.com/MandarinSolutions/emma-cli/blob/v0.0.5/src/commands//vms/index.ts)_
+_See code: [src/commands//vms/index.ts](https://github.com/emma-community/emma-cli/blob/v0.0.5/src/commands//vms/index.ts)_
 
 ## `emmacli vms clone`
 
