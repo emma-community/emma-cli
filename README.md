@@ -1,9 +1,9 @@
 Emma platform command line interface
 =================
 
-[![emmacli](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Version](https://img.shields.io/npm/v/oclif-hello-world.svg)](https://npmjs.org/package/oclif-hello-world)
-[![Downloads/week](https://img.shields.io/npm/dw/oclif-hello-world.svg)](https://npmjs.org/package/oclif-hello-world)
+[![emmacli](https://img.shields.io/badge/cli-emmacli-brightgreen.svg)](https://emma.ms/)
+[![Version](https://img.shields.io/npm/v/emmacli.svg)](https://npmjs.org/package/emmacli)
+[![Downloads/week](https://img.shields.io/npm/dw/emmacli.svg)](https://npmjs.org/package/emmacli)
 
 <!-- toc -->
 * [Usage](#usage)
