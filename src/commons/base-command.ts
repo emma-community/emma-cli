@@ -84,4 +84,28 @@ export default abstract class BaseCommand extends Command {
 
     return params
   }
+
+  async readAllFlexPages(path: string, params: any) {
+    const items = []
+    const itemCount = 100
+    let pageNumber = 0
+    let hasMore = false
+    do {
+      const currentPageParams = {...params, itemCount, pageNumber}
+      const page = await this.readFlexPage(path, currentPageParams)
+
+      // update reading pages state
+      items.push(...page.content)
+      hasMore = !page.last
+      pageNumber++
+    } while (hasMore)
+
+    return items
+  }
+
+  async readFlexPage(path: string, params: any) {
+    const publicApiService = this.getPublicApiService()
+    const response = await publicApiService.get(path, params)
+    return response.data
+  }
 }

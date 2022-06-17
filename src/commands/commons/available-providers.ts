@@ -7,7 +7,6 @@ export default class Providers extends BaseCommand {
   static flags = {
     json: Flags.boolean({description: 'Print a json output', required: false}),
     yaml: Flags.boolean({description: 'Print a yaml output', required: false}),
-    itemCount: Flags.integer({description: 'Item count default 10000', required: false}),
   }
 
   static args = [
