@@ -14,7 +14,7 @@ export default abstract class TerraformProxyDataCommand extends BaseCommand {
   }
 
   async getData(): Promise<any> {
-    throw new Error("Not implemented 'getBaseCommand' operation")
+    throw new Error("Not implemented 'getData' operation")
   }
 
   getFilteredInstances(data: any) {
