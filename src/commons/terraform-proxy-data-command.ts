@@ -10,6 +10,8 @@ export default abstract class TerraformProxyDataCommand extends BaseCommand {
 
     if (data.length > 0) {
       console.log(JSON.stringify(data[0]))
+    } else {
+      throw new Error("Can not find any item by provided filter. Please specify a different filter condition")
     }
   }
 
