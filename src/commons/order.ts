@@ -10,7 +10,7 @@ export interface OrderDefinition {
 }
 
 function proceedOrder(data: Array<any>, orderDefinition: OrderDefinition) {
-  return orderBy(data, (item) => get(item, orderDefinition.field), [orderDefinition.direction])
+  return orderBy(data, item => get(item, orderDefinition.field), [orderDefinition.direction])
 }
 
 export default function order(data: Array<any>, orderDefinition: any) {

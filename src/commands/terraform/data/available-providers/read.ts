@@ -1,4 +1,4 @@
-import TerraformProxyDataCommand from "../../../../commons/terraform-proxy-data-command";
+import TerraformProxyDataCommand from '../../../../commons/terraform-proxy-data-command'
 
 export default class Proxy extends TerraformProxyDataCommand {
   static description = 'Get available providers for a vm transferring'

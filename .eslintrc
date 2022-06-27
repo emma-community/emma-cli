@@ -5,7 +5,12 @@
   ],
   "rules": {
     "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-else-return": "off",
+    "no-else-return": "off",
+    "no-await-in-loop": "off",
     "no-eq-null": "off",
-    "eqeqeq": "off"
+    "eqeqeq": "off",
+    "unicorn/no-array-for-each": "off",
+    "no-promise-executor-return": "off"
   }
 }

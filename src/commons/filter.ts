@@ -31,8 +31,8 @@ function getComparator(filter: Filter) {
   } else if (filter.like != null) {
     return (item: any) => {
       const value = get(item, filter.field)
-      const regExp = new RegExp(filter.like!, 'm');
-      return regExp.test(value);
+      const regExp = new RegExp(filter.like!, 'm')
+      return regExp.test(value)
     }
   } else if (filter.in != null) {
     return (item: any) => filter.in?.includes(get(item, filter.field))
@@ -40,18 +40,16 @@ function getComparator(filter: Filter) {
     return (item: any) => {
       const fieldItems = get(item, filter.field)
 
-      if (fieldItems != null && fieldItems.length > 0) {
-        return fieldItems.includes(filter.has)
-      } else {
-        return false
-      }
+      return fieldItems != null &&
+        fieldItems.length > 0 &&
+        fieldItems.includes(filter.has)
     }
   } else if (filter.or != null) {
     return (item: any) => {
       const conditions = filter.or!
 
-      for (let i = 0; i < conditions.length; i++) {
-        const itemCompareResult = getComparator(conditions[i])(item)
+      for (const condition of conditions) {
+        const itemCompareResult = getComparator(condition)(item)
 
         // just looking for the first true result
         if (itemCompareResult) {
@@ -66,8 +64,8 @@ function getComparator(filter: Filter) {
     return (item: any) => {
       const conditions = filter.and!
 
-      for (let i = 0; i < conditions.length; i++) {
-        const itemCompareResult = getComparator(conditions[i])(item)
+      for (const condition of conditions) {
+        const itemCompareResult = getComparator(condition)(item)
 
         // just looking for the first false result
         if (!itemCompareResult) {

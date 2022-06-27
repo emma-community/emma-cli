@@ -66,6 +66,18 @@ USAGE
 * [`emmacli spots shutdown`](#emmacli-spots-shutdown)
 * [`emmacli spots snapshot`](#emmacli-spots-snapshot)
 * [`emmacli spots start`](#emmacli-spots-start)
+* [`emmacli terraform data application-descriptions read`](#emmacli-terraform-data-application-descriptions-read)
+* [`emmacli terraform data auth-info read`](#emmacli-terraform-data-auth-info-read)
+* [`emmacli terraform data available-providers read ID`](#emmacli-terraform-data-available-providers-read-id)
+* [`emmacli terraform data bundles read`](#emmacli-terraform-data-bundles-read)
+* [`emmacli terraform data locations read`](#emmacli-terraform-data-locations-read)
+* [`emmacli terraform data presets read`](#emmacli-terraform-data-presets-read)
+* [`emmacli terraform data providers read`](#emmacli-terraform-data-providers-read)
+* [`emmacli terraform data ssh read`](#emmacli-terraform-data-ssh-read)
+* [`emmacli terraform data templates read`](#emmacli-terraform-data-templates-read)
+* [`emmacli terraform data wizard-tuples-spot read`](#emmacli-terraform-data-wizard-tuples-spot-read)
+* [`emmacli terraform data wizard-tuples read`](#emmacli-terraform-data-wizard-tuples-read)
+* [`emmacli terraform resource vm OPERATION [STATE]`](#emmacli-terraform-resource-vm-operation-state)
 * [`emmacli vms`](#emmacli-vms)
 * [`emmacli vms clone`](#emmacli-vms-clone)
 * [`emmacli vms create`](#emmacli-vms-create)
@@ -130,7 +142,7 @@ DESCRIPTION
   Get list of current project applications
 ```
 
-_See code: [src/commands//applications/index.ts](https://github.com/emma-community/emma-cli/blob/v0.0.5/src/commands//applications/index.ts)_
+_See code: [dist/commands/applications/index.ts](https://github.com/emma-community/emma-cli/blob/v0.0.5/dist/commands/applications/index.ts)_
 
 ## `emmacli applications create`
 
@@ -265,7 +277,7 @@ DESCRIPTION
   Get list of current project k8s clusters
 ```
 
-_See code: [src/commands//clusters/index.ts](https://github.com/emma-community/emma-cli/blob/v0.0.5/src/commands//clusters/index.ts)_
+_See code: [dist/commands/clusters/index.ts](https://github.com/emma-community/emma-cli/blob/v0.0.5/dist/commands/clusters/index.ts)_
 
 ## `emmacli clusters create`
 
@@ -308,15 +320,14 @@ Get list of providers available for transfer a vm
 
 ```
 USAGE
-  $ emmacli commons available-providers [ID] [--json] [--yaml] [--itemCount <value>]
+  $ emmacli commons available-providers [ID] [--json] [--yaml]
 
 ARGUMENTS
   ID  Id of transferring vm
 
 FLAGS
-  --itemCount=<value>  Item count default 10000
-  --json               Print a json output
-  --yaml               Print a yaml output
+  --json  Print a json output
+  --yaml  Print a yaml output
 
 DESCRIPTION
   Get list of providers available for transfer a vm
@@ -713,7 +724,7 @@ DESCRIPTION
   Get list of current project products
 ```
 
-_See code: [src/commands//products/index.ts](https://github.com/emma-community/emma-cli/blob/v0.0.5/src/commands//products/index.ts)_
+_See code: [dist/commands/products/index.ts](https://github.com/emma-community/emma-cli/blob/v0.0.5/dist/commands/products/index.ts)_
 
 ## `emmacli spots`
 
@@ -731,7 +742,7 @@ DESCRIPTION
   Get list of current project spot vms
 ```
 
-_See code: [src/commands//spots/index.ts](https://github.com/emma-community/emma-cli/blob/v0.0.5/src/commands//spots/index.ts)_
+_See code: [dist/commands/spots/index.ts](https://github.com/emma-community/emma-cli/blob/v0.0.5/dist/commands/spots/index.ts)_
 
 ## `emmacli spots check-spot-price`
 
@@ -867,6 +878,157 @@ DESCRIPTION
   Start spot
 ```
 
+## `emmacli terraform data application-descriptions read`
+
+Get application descriptions
+
+```
+USAGE
+  $ emmacli terraform data application-descriptions read
+
+DESCRIPTION
+  Get application descriptions
+```
+
+## `emmacli terraform data auth-info read`
+
+Get auth info
+
+```
+USAGE
+  $ emmacli terraform data auth-info read
+
+DESCRIPTION
+  Get auth info
+```
+
+## `emmacli terraform data available-providers read ID`
+
+Get available providers for a vm transferring
+
+```
+USAGE
+  $ emmacli terraform data available-providers read [ID]
+
+ARGUMENTS
+  ID  Id of transferring vm
+
+DESCRIPTION
+  Get available providers for a vm transferring
+```
+
+## `emmacli terraform data bundles read`
+
+Get bundle
+
+```
+USAGE
+  $ emmacli terraform data bundles read
+
+DESCRIPTION
+  Get bundle
+```
+
+## `emmacli terraform data locations read`
+
+Get location
+
+```
+USAGE
+  $ emmacli terraform data locations read
+
+DESCRIPTION
+  Get location
+```
+
+## `emmacli terraform data presets read`
+
+Get presets
+
+```
+USAGE
+  $ emmacli terraform data presets read
+
+DESCRIPTION
+  Get presets
+```
+
+## `emmacli terraform data providers read`
+
+Get provider
+
+```
+USAGE
+  $ emmacli terraform data providers read
+
+DESCRIPTION
+  Get provider
+```
+
+## `emmacli terraform data ssh read`
+
+Get ssh key
+
+```
+USAGE
+  $ emmacli terraform data ssh read
+
+DESCRIPTION
+  Get ssh key
+```
+
+## `emmacli terraform data templates read`
+
+Get template
+
+```
+USAGE
+  $ emmacli terraform data templates read
+
+DESCRIPTION
+  Get template
+```
+
+## `emmacli terraform data wizard-tuples-spot read`
+
+Get wizard-tuple
+
+```
+USAGE
+  $ emmacli terraform data wizard-tuples-spot read
+
+DESCRIPTION
+  Get wizard-tuple
+```
+
+## `emmacli terraform data wizard-tuples read`
+
+Get wizard-tuple
+
+```
+USAGE
+  $ emmacli terraform data wizard-tuples read
+
+DESCRIPTION
+  Get wizard-tuple
+```
+
+## `emmacli terraform resource vm OPERATION [STATE]`
+
+Manage VM instance
+
+```
+USAGE
+  $ emmacli terraform resource vm [OPERATION] [STATE]
+
+ARGUMENTS
+  OPERATION  Id of operation
+  STATE      State of resource
+
+DESCRIPTION
+  Manage VM instance
+```
+
 ## `emmacli vms`
 
 Get list of current project vms (vm, spot, private vms)
@@ -883,7 +1045,7 @@ DESCRIPTION
   Get list of current project vms (vm, spot, private vms)
 ```
 
-_See code: [src/commands//vms/index.ts](https://github.com/emma-community/emma-cli/blob/v0.0.5/src/commands//vms/index.ts)_
+_See code: [dist/commands/vms/index.ts](https://github.com/emma-community/emma-cli/blob/v0.0.5/dist/commands/vms/index.ts)_
 
 ## `emmacli vms clone`
 
